@@ -8,3 +8,5 @@ export const DescriptionCard = ({className}) => {
         </div>
     )
 }
+
+export default DescriptionCard;

@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Navbar from "../components/Navbar";
-import Action from "./components/Action";
-import Card from "./components/Card";
+import Action from "../components/pageComponents/homePageComponents/Action";
+import Card from "../components/pageComponents/homePageComponents/Card";
 
 export default function Home() {
   return (

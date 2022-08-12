@@ -1,5 +1,5 @@
-import SearchBar from "../../components/SearchBar.jsx";
-import Chip from "../../components/Chip.jsx";
+import SearchBar from "../../SearchBar.jsx";
+import Chip from "../../Chip.jsx";
 
 const Action =() => {
     return (

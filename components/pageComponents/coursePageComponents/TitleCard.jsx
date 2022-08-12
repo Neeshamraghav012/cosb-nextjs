@@ -1,6 +1,6 @@
 import {Rating} from "@mui/material";
-import BookmarkIcon from "../../../components/BookmarkIcon";
-import {AddToListChip, MarkCompleteChip, WriteReviewChip} from "../../../components/ActionChip";
+import BookmarkIcon from "../../BookmarkIcon";
+import {AddToListChip, MarkCompleteChip, WriteReviewChip} from "../../ActionChip";
 
 export const TitleCard = ({title, platform, className, rating, reviews}) => {
     return (
@@ -18,10 +18,12 @@ export const TitleCard = ({title, platform, className, rating, reviews}) => {
             <span className={'text-lg'}>{reviews} Reviews</span>
             <div className={'flex flex-row mt-5'}>
                 <BookmarkIcon className={'-ml-1'}/>
-                <AddToListChip/>
+                <AddToListChip />
                 <MarkCompleteChip className={'ml-2'}/>
                 <WriteReviewChip className={'ml-2'}/>
             </div>
         </div>
     )
 }
+
+export default TitleCard;
