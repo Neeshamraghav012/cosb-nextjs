@@ -55,7 +55,19 @@ export const GotoClass = ({className}) => {
     )
 }
 
+export const EditProfileChip = ({className}) => {
+    return (
+        <div className={'flex border-1 border-neutral-200 py-1 px-2 rounded-md cursor-pointer ' + className}>
+            <span className={'text-sm font-bold mx-auto'}>Edit profile</span>
+        </div>
+    )
+}
+
 export default {
     AddToListChip,
-    QuickViewChip
+    QuickViewChip,
+    MarkCompleteChip,
+    WriteReviewChip,
+    GotoClass,
+    EditProfileChip
 }

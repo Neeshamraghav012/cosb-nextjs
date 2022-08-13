@@ -1,7 +1,7 @@
 const infoCardMobile = ({className, platform, price, language, certificate, time, level, cc}) => {
     return (
-        <div className={'bg-white border-neutral-200 mt-5 px-5 flex flex-col ' + className}>
-            <span className={'text-xl mt-4 font-bold'}>Details</span>
+        <div className={'bg-white border-neutral-200 mt-5 px-5 py-4 flex flex-col ' + className}>
+            <span className={'text-xl font-bold'}>Details</span>
             <div className={'flex mt-5'}>
                 <div className={'flex flex-col w-1/2 space-y-3'}>
                     <span className={'text-gray-700'}>Provider</span>
