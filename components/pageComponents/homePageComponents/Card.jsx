@@ -10,7 +10,7 @@ import {AddToListChip, QuickViewChip} from '../../ActionChip';
 import {Rating} from "@mui/material";
 import BookmarkIcon from "../../BookmarkIcon";
 
-const Card = ({ title, description, image, rating, reviews, platform }) => {
+const Card = ({ title, description, image, rating, platform }) => {
   return (
     <motion.div whileHover={{scale: 1.03}} className="pl-10 border-neutral-200 border-1 pr-5 py-10 rounded-3xl shadow-md container md:w-2/3 flex md:flex-row flex-col mx-auto my-2">
         <div className={'flex flex-col md:w-4/5 md:border-r-1 pr-4'}>
