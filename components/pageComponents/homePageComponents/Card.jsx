@@ -10,7 +10,7 @@ import {AddToListChip, QuickViewChip} from '../../ActionChip';
 import {Rating} from "@mui/material";
 import BookmarkIcon from "../../BookmarkIcon";
 
-const Card = ({ title, description, image, rating, reviews, platform }) => {
+const Card = ({ title, description, reviews, image, rating, platform }) => {
   return (
     <motion.div whileHover={{scale: 1.03}} className="pl-10 border-neutral-200 border-1 pr-5 py-10 rounded-3xl shadow-md container md:w-2/3 flex md:flex-row flex-col mx-auto my-2">
         <div className={'flex flex-col md:w-4/5 md:border-r-1 pr-4'}>
@@ -19,6 +19,8 @@ const Card = ({ title, description, image, rating, reviews, platform }) => {
                     <Image className={'w-full rounded-xl'} src={image} alt={title} height={'70'} width={'50'} />
                 </div>
                 <div className="ml-4 w-5/6">
+                    
+                {/*<Link to={{pathname: "/course-detail", state: id}}><h3 className={'text-2xl font-bold hover:underline cursor-pointer'}>{title}</h3></Link>*/}
                     <h3 className={'text-2xl font-bold hover:underline cursor-pointer'}>{title}</h3>
                     <div className={'flex '}>
                         <Rating
@@ -28,7 +30,7 @@ const Card = ({ title, description, image, rating, reviews, platform }) => {
                             value={rating}
                             readOnly={true}
                         />
-                        <span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>
+                        {/*<span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>*/}
                     </div>
                 </div>
 
@@ -36,11 +38,11 @@ const Card = ({ title, description, image, rating, reviews, platform }) => {
             <div className={'flex flex-col mt-5'}>
                 {/*<p className={'text-gray-600 text-xs my-auto'}>{description}</p>*/}
                 <p className={'tex-md text-justify'}>{description}</p>
-                <div className={'flex mt-2'}>
+                {/*<div className={'flex mt-2'}>
                     <BookmarkIcon/>
                     <AddToListChip />
                     <QuickViewChip className={'ml-1'} />
-                </div>
+  </div>*/}
             </div>
         </div>
 
@@ -54,7 +56,7 @@ const Card = ({ title, description, image, rating, reviews, platform }) => {
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{platform}</span>
             </div>
-            <div className={'border-b-1 p-2 flex'}>
+            {/*<div className={'border-b-1 p-2 flex'}>
                 <SpeedIcon
                     fontSize={'small'}
                     sx={{
@@ -62,7 +64,7 @@ const Card = ({ title, description, image, rating, reviews, platform }) => {
                     }}
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{'30 hours long'}</span>
-            </div>
+                </div>*/}
             <div className={'border-b-1 p-2 flex'}>
                 <CalendarTodayOutlinedIcon
                     fontSize={'small'}
