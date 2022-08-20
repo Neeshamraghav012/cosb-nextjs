@@ -4,7 +4,7 @@ import BookmarkIcon from "../../../BookmarkIcon";
 import {AddToListChip, GotoClass, MarkCompleteChip, WriteReviewChip} from "../../../ActionChip";
 import {Rating} from "@mui/material";
 
-const TitleCardMobile = ({image, title, platform, rating, reviews}) => {
+const TitleCardMobile = ({image, title, platform, rating}) => {
     return (
         <div className={'bg-white border-neutral-200 rounded-lg'}>
             <div className={''}>
@@ -33,10 +33,10 @@ const TitleCardMobile = ({image, title, platform, rating, reviews}) => {
                         size={'large'}
                         className={'mt-2 -ml-1 -mt-1'}
                     />
-                    <span className={'text-lg my-auto ml-2'}>{reviews} Reviews</span>
+                    {/*<span className={'text-lg my-auto ml-2'}>{reviews} Reviews</span>*/}
                 </div>
                 <GotoClass/>
-                <WriteReviewChip className={'mx-4 py-3 mt-2'}/>
+                {/*<WriteReviewChip className={'mx-4 py-3 mt-2'}/>*/}
             </div>
         </div>
     )
