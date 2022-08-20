@@ -48,7 +48,7 @@ export default function CoursePage() {
                         reviews={23}
                         image={'https://res.cloudinary.com/hire-easy/image/upload/v1/media/images/python-course-3_iyrekd'}
                     />
-                    <NavigationCard/>
+                    {/*<NavigationCard/>*/}
                     <InfoCardMobile
                         platform={'Udemy'}
                         price={'Free'}
@@ -58,9 +58,9 @@ export default function CoursePage() {
                         level={'Beginner'}
                         cc={'English, French'}
                     />
-                    <RelatedCoursesMobile/>
-                    <ReviewsMobile/>
-                    <BottomButton/>
+                    {/*<RelatedCoursesMobile/>*/}
+                    {/*<ReviewsMobile/>*/}
+                    {/*<BottomButton/>*/}
                 </div>
 
             </div>

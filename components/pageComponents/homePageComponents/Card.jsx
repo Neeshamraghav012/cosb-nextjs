@@ -19,6 +19,8 @@ const Card = ({ title, description, reviews, image, rating, platform }) => {
                     <Image className={'w-full rounded-xl'} src={image} alt={title} height={'70'} width={'50'} />
                 </div>
                 <div className="ml-4 w-5/6">
+                    
+                {/*<Link to={{pathname: "/course-detail", state: id}}><h3 className={'text-2xl font-bold hover:underline cursor-pointer'}>{title}</h3></Link>*/}
                     <h3 className={'text-2xl font-bold hover:underline cursor-pointer'}>{title}</h3>
                     <div className={'flex '}>
                         <Rating
@@ -28,7 +30,7 @@ const Card = ({ title, description, reviews, image, rating, platform }) => {
                             value={rating}
                             readOnly={true}
                         />
-                        <span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>
+                        {/*<span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>*/}
                     </div>
                 </div>
 
@@ -36,11 +38,11 @@ const Card = ({ title, description, reviews, image, rating, platform }) => {
             <div className={'flex flex-col mt-5'}>
                 {/*<p className={'text-gray-600 text-xs my-auto'}>{description}</p>*/}
                 <p className={'tex-md text-justify'}>{description}</p>
-                <div className={'flex mt-2'}>
+                {/*<div className={'flex mt-2'}>
                     <BookmarkIcon/>
                     <AddToListChip />
                     <QuickViewChip className={'ml-1'} />
-                </div>
+  </div>*/}
             </div>
         </div>
 
@@ -54,7 +56,7 @@ const Card = ({ title, description, reviews, image, rating, platform }) => {
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{platform}</span>
             </div>
-            <div className={'border-b-1 p-2 flex'}>
+            {/*<div className={'border-b-1 p-2 flex'}>
                 <SpeedIcon
                     fontSize={'small'}
                     sx={{
@@ -62,7 +64,7 @@ const Card = ({ title, description, reviews, image, rating, platform }) => {
                     }}
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{'30 hours long'}</span>
-            </div>
+                </div>*/}
             <div className={'border-b-1 p-2 flex'}>
                 <CalendarTodayOutlinedIcon
                     fontSize={'small'}
