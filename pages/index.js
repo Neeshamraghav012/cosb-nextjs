@@ -62,7 +62,6 @@ export default function Home() {
                           description={course.description}
                           image={course.image}
                           rating={course.overall_rating}
-                          reviews={course.num_of_reviews}
                           platform={course.platform}
                           price={course.price}
                     />))
