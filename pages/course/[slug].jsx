@@ -17,6 +17,28 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 
+export const getStaticPaths = async () => {
+    const res = await axios.get('https://cosbapi.herokuapp.com/api/courses/all-courses-view/');
+    const paths = res.data.map(course => ({
+        params: {
+            slug: course.id.toString(),
+        },
+    }));
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export const getStaticProps = async ({params}) => {
+    const res = await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-detail-view/${params.slug}`);
+    return {
+        props: {
+            course: res.data,
+        },
+    };
+}
+
 export default function CoursePage() {
     const router = useRouter();
     const { slug } = router.query;
