@@ -39,7 +39,7 @@ export const getStaticProps = async ({params}) => {
     };
 }
 
-export default function CoursePage() {
+export default function CoursePage({course}) {
     const router = useRouter();
     const { slug } = router.query;
     const [title, setTitle] = useState("");
@@ -53,23 +53,35 @@ export default function CoursePage() {
     const [link, setLink] = useState("");
 
     useEffect(() => {
-        async function fetchData() {
-            if(slug)
-                await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-detail-view/${slug}`)
-                    .then(res => {
-                        setTitle(res.data.name);
-                        setPrice(res.data.price);
-                        setPlatform(res.data.platform);
-                        setLanguage(res.data.language);
-                        setCertificate(res.data.certificate);
-                        setImage(res.data.image);
-                        setRating(res.data.overall_rating);
-                        setLink(res.data.link);
-                        setLoading(false);
-                    })
-        }
-        fetchData();
-    }, [slug])
+        setTitle(course.title);
+        setPrice(course.price);
+        setPlatform(course.platform);
+        setLanguage(course.language);
+        setCertificate(course.certificate);
+        setImage(course.image);
+        setRating(course.rating);
+        setLink(course.link);
+        setLoading(false);
+    }, [course]);
+
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         if(slug)
+    //             await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-detail-view/${slug}`)
+    //                 .then(res => {
+    //                     setTitle(res.data.name);
+    //                     setPrice(res.data.price);
+    //                     setPlatform(res.data.platform);
+    //                     setLanguage(res.data.language);
+    //                     setCertificate(res.data.certificate);
+    //                     setImage(res.data.image);
+    //                     setRating(res.data.overall_rating);
+    //                     setLink(res.data.link);
+    //                     setLoading(false);
+    //                 })
+    //     }
+    //     fetchData();
+    // }, [slug])
 
 
     return loading ? (
