@@ -10,7 +10,7 @@ import BookmarkIcon from "../../BookmarkIcon";
 import cosb from '../../../public/cosb.jpeg'
 import Link from "next/link";
 
-const Card = ({ title, description, image, rating, reviews, platform, price, id }) => {
+const Card = ({ title, description, image, rating, platform, price, id }) => {
   return (
     <motion.div whileHover={{scale: 1.03}} className="pl-10 border-neutral-200 border-1 pr-5 py-10 rounded-3xl shadow-md container md:w-2/3 flex md:flex-row flex-col mx-auto my-2">
         <div className={'flex flex-col md:w-4/5 md:border-r-1 pr-4'}>
@@ -23,12 +23,12 @@ const Card = ({ title, description, image, rating, reviews, platform, price, id 
                     <div className={'flex '}>
                         <Rating
                             name="rate1"
-                            starCount={5}
+                            starCount={rating}
                             precision={0.1}
                             value={rating}
                             readOnly={true}
                         />
-                        <span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>
+                        {/*<span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>*/}
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@ const Card = ({ title, description, image, rating, reviews, platform, price, id 
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{platform}</span>
             </div>
-            <div className={'border-b-1 p-2 flex'}>
+            {/*<div className={'border-b-1 p-2 flex'}>
                 <SpeedIcon
                     fontSize={'small'}
                     sx={{
@@ -62,7 +62,7 @@ const Card = ({ title, description, image, rating, reviews, platform, price, id 
                     }}
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{'30 hours long'}</span>
-            </div>
+            </div>*/}
             <div className={'border-b-1 p-2 flex'}>
                 <CalendarTodayOutlinedIcon
                     fontSize={'small'}
