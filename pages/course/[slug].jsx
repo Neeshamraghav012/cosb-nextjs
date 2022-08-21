@@ -53,13 +53,13 @@ export default function CoursePage({course}) {
     const [link, setLink] = useState("");
 
     useEffect(() => {
-        setTitle(course.title);
+        setTitle(course.name);
         setPrice(course.price);
         setPlatform(course.platform);
         setLanguage(course.language);
         setCertificate(course.certificate);
         setImage(course.image);
-        setRating(course.rating);
+        setRating(course.overall_rating);
         setLink(course.link);
         setLoading(false);
     }, [course]);
