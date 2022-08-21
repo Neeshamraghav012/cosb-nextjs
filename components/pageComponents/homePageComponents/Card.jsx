@@ -28,7 +28,7 @@ const Card = ({ title, description, image, rating, platform, price, id }) => {
                             value={rating}
                             readOnly={true}
                         />
-                        {/*<span className={'ml-2 text-gray-600 text-xs my-auto'}>{reviews} Reviews</span>*/}
+                        <span className={'ml-2 text-gray-600 text-xs my-auto'}>Best Online Course</span>
                     </div>
                 </div>
 

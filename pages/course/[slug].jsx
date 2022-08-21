@@ -63,7 +63,7 @@ export default function CoursePage() {
                  {/*This is for Bigger Screens */}
                 <div className={'hidden md:flex flex-col w-2/3'}>
                     <TitleCard title={title} platform={platform} rating={rating} />
-                    <DescriptionCard className={'mt-5'}/>
+                    {/*<DescriptionCard className={'mt-5'}/>*/}
                 </div>
                 <div className={'hidden md:flex flex-col w-1/3 ml-5'}>
                     <InfoCard
