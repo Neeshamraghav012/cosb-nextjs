@@ -22,7 +22,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio}) 
             <div className={'flex mt-5'}>
                 <div className={'flex  w-1/3 md:items-center  md:mt-0 md:py-20 px-5'}>
                     <div className={'ml-auto my-auto'}>
-                        <Image src={image} width={'150rem'} height={'150rem'} className={'rounded-full'} />
+                        <Image src={image} width={'150rem'} height={'150rem'} className={'rounded-full'} alt={username} />
                     </div>
                 </div>
                 <div className={'flex  flex-col w-2/3 md:w-1/3 md:mt-0 md:py-10'}>

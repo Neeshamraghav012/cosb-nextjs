@@ -1,6 +1,6 @@
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar = ({ onSearchChange, className }) => {
+const SearchBar = ({ onSearchChange, className, inputRef }) => {
     return (
         <div className={"rounded-full flex items-center  md:w-1/3 p-2 h-12 border-2 border-black " + className}>
             <SearchIcon/>
@@ -9,6 +9,7 @@ const SearchBar = ({ onSearchChange, className }) => {
                 type="search"
                 placeholder="Search"
                 onChange={onSearchChange}
+                ref={inputRef}
             />
         </div>
     );

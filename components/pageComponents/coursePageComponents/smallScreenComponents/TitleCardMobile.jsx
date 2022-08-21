@@ -3,24 +3,25 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import BookmarkIcon from "../../../BookmarkIcon";
 import {AddToListChip, GotoClass, MarkCompleteChip, WriteReviewChip} from "../../../ActionChip";
 import {Rating} from "@mui/material";
+import Link from "next/link";
 
-const TitleCardMobile = ({image, title, platform, rating}) => {
+const TitleCardMobile = ({image, title, platform, rating, link}) => {
     return (
         <div className={'bg-white border-neutral-200 rounded-lg'}>
             <div className={''}>
                 <Image src={image} layout={'responsive'} width={'100%'} height={'60'} />
             </div>
             <div className={'mx-3 flex flex-col'}>
-                <div className={'flex mt-1'}>
-                    <div>
-                        <ShareOutlinedIcon/>
-                    </div>
-                    <div className={'ml-auto flex'}>
-                        <BookmarkIcon/>
-                        <AddToListChip isSmall={true}/>
-                        <MarkCompleteChip isSmall={true} className={'ml-1'}/>
-                    </div>
-                </div>
+                {/*<div className={'flex mt-1'}>*/}
+                {/*    <div>*/}
+                {/*        <ShareOutlinedIcon/>*/}
+                {/*    </div>*/}
+                {/*    <div className={'ml-auto flex'}>*/}
+                {/*        <BookmarkIcon/>*/}
+                {/*        <AddToListChip isSmall={true}/>*/}
+                {/*        <MarkCompleteChip isSmall={true} className={'ml-1'}/>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 <span className={'text-3xl font-bold mt-5'}>{title}</span>
                 <span className={'text-xl mt-1'}>via <span className={'hover:underline'}>{platform}</span></span>
@@ -35,7 +36,9 @@ const TitleCardMobile = ({image, title, platform, rating}) => {
                     />
                     {/*<span className={'text-lg my-auto ml-2'}>{reviews} Reviews</span>*/}
                 </div>
-                <GotoClass/>
+                <Link href={link}>
+                    <a><GotoClass/></a>
+                </Link>
                 {/*<WriteReviewChip className={'mx-4 py-3 mt-2'}/>*/}
             </div>
         </div>

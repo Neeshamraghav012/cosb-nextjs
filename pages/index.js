@@ -4,45 +4,71 @@ import styles from '../styles/Home.module.css'
 import Navbar from "../components/Navbar";
 import Action from "../components/pageComponents/homePageComponents/Action";
 import Card from "../components/pageComponents/homePageComponents/Card";
+import {useEffect, useState} from "react";
+import {CircularProgress, Skeleton} from "@mui/material";
+import Box from "@mui/material/Box";
+import axios from "axios";
 
 export default function Home() {
+    const [loading, setLoading] = useState(true);
+    const [courseData, setCourseData] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            await axios.get("https://cosbapi.herokuapp.com/api/courses/courses-list-view/")
+                .then(res => {
+                    setCourseData(res.data);
+
+                })
+
+        }
+    fetchData().then(r => setLoading(false));
+    }, [])
+
+    const onSearchChange = async (e) => {
+        const searchValue = e.target ? e.target.value : e.current.value;
+        setLoading(true);
+        searchValue.length > 0 ? await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-search-view/${searchValue}`).then(res => {
+            setCourseData(res.data);
+            setLoading(false);
+        }) : await axios.get("https://cosbapi.herokuapp.com/api/courses/courses-list-view/").then(res => {
+            setCourseData(res.data);
+            setLoading(false);
+        })
+
+    }
+
+    return  (
+        <div>
+          <Head>
+            <title>cosb</title>
+            <meta name="description" content="cosb" />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+
+          <Navbar/>
+          <Action onSearchChange={onSearchChange}/>
 
 
-  return (
-    <div>
-      <Head>
-        <title>cosb</title>
-        <meta name="description" content="cosb" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+            {loading ? (
+                <div className={'flex justify-center items-center w-full'}>
+                    <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
+                    {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
+                </div>
+            ) : (
+                courseData.map(course => (
+                    <Card key={course.id}
+                          id={course.id}
+                          title={course.name}
+                          description={course.description}
+                          image={course.image}
+                          rating={course.overall_rating}
+                          reviews={course.num_of_reviews}
+                          platform={course.platform}
+                          price={course.price}
+                    />))
+            ) }
 
-      <Navbar/>
-      <Action/>
-
-      {/* Send id in card */}
-      <Card title={'Python Course'}
-            description={'Python Course for Beginners Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
-            image={'https://res.cloudinary.com/hire-easy/image/upload/v1/media/images/python-course-3_iyrekd'}
-            rating={4.5}
-            reviews={30}
-            platform={'Coursera'}
-      />
-      <Card title={'Python Course'}
-            description={'Python Course for Beginners Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
-            image={'https://res.cloudinary.com/hire-easy/image/upload/v1/media/images/python-course-3_iyrekd'}
-            rating={3.9}
-            reviews={20}
-            platform={'YouTube'}
-      />
-      <Card title={'Python Course'}
-            description={'Python Course for Beginners Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
-            image={'https://res.cloudinary.com/hire-easy/image/upload/v1/media/images/python-course-3_iyrekd'}
-            rating={3.3}
-            reviews={10}
-            platform={'GeeksforGeeks'}
-      />
-
-    </div>
+        </div>
 
   )
 }

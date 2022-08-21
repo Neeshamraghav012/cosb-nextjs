@@ -9,12 +9,15 @@ import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import ClosedCaptionOffOutlinedIcon from '@mui/icons-material/ClosedCaptionOffOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import {GotoClass} from "../../ActionChip";
+import Link from "next/link";
 
-export const InfoCard = ({className, image, platform, price, language, certificate}) => {
+export const InfoCard = ({className, image, platform, price, language, certificate, link}) => {
     return (
         <div className={'flex py-5 flex-col bg-white border-1 border-neutral-200 rounded-md px-8 ' + className}>
-            <Image src={image} width={40} height={200}/>
-            <GotoClass/>
+            <Image src={image ? image : 'https://i.imgur.com/mrIuHoC.jpg'} width={40} height={200} alt={'Course Image'}/>
+            <Link href={link}>
+                <a><GotoClass/></a>
+            </Link>
 
             <div className={'mx-4 mt-5'}>
                 <div className={'border-b-1 flex py-2'}>
