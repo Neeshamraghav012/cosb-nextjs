@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 import {CircularProgress, Skeleton} from "@mui/material";
 import Box from "@mui/material/Box";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
@@ -50,7 +51,7 @@ export default function Home() {
 
 
             {loading ? (
-                <div className={'flex justify-center items-center w-full'}>
+                <div className={'flex justify-center  w-full h-screen'}>
                     <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
                     {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
                 </div>
@@ -66,6 +67,8 @@ export default function Home() {
                           price={course.price}
                     />))
             ) }
+
+            <Footer className={'bottom-0'}/>
 
         </div>
 

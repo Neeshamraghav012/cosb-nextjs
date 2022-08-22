@@ -16,6 +16,7 @@ import {useEffect} from "react";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
+import Footer from "../../components/Footer";
 
 export const getStaticPaths = async () => {
     const res = await axios.get('https://cosbapi.herokuapp.com/api/courses/all-courses-view/');
@@ -133,6 +134,7 @@ export default function CoursePage({course}) {
                 </div>
 
             </div>
+            <Footer className={'mt-5'} />
         </div>
     )
 }
