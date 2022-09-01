@@ -9,13 +9,14 @@ import {CircularProgress, Skeleton} from "@mui/material";
 import Box from "@mui/material/Box";
 import axios from "axios";
 import Footer from "../components/Footer";
+import {HOME_COURSES, SEARCH_COURSES} from "../config/constants";
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            await axios.get("https://cosbapi.herokuapp.com/api/courses/courses-list-view/")
+            await axios.get(HOME_COURSES)
                 .then(res => {
                     setCourseData(res.data);
 
@@ -28,10 +29,10 @@ export default function Home() {
     const onSearchChange = async (e) => {
         const searchValue = e.target ? e.target.value : e.current.value;
         setLoading(true);
-        searchValue.length > 0 ? await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-search-view/${searchValue}`).then(res => {
+        searchValue.length > 0 ? await axios.get(`${SEARCH_COURSES}${searchValue}`).then(res => {
             setCourseData(res.data);
             setLoading(false);
-        }) : await axios.get("https://cosbapi.herokuapp.com/api/courses/courses-list-view/").then(res => {
+        }) : await axios.get(HOME_COURSES).then(res => {
             setCourseData(res.data);
             setLoading(false);
         })
