@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import {motion} from "framer-motion";
 import Footer from "../../components/Footer";
+import Link from "next/link";
 
 const Signup = () => {
     return (
@@ -20,6 +21,13 @@ const Signup = () => {
                 </div>
 
                 <motion.button whileHover={{scale:1.1}} className={'py-2 px-6 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'}>Sign up</motion.button>
+
+                <div className={'flex text-left  mt-5 '}>
+                    <span className={'text-gray-700'}>Been here before?</span>
+                    <Link href={'/login'}>
+                        <span className={'cursor-pointer font-semibold hover:underline ml-4'}>Log in</span>
+                    </Link>
+                </div>
             </motion.div>
 
             <Footer className={'mt-20'}/>

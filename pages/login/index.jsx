@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import {motion} from "framer-motion";
 import Footer from "../../components/Footer";
+import Link from "next/link";
 
 const Login = () => {
     return (
@@ -23,7 +24,9 @@ const Login = () => {
 
                 <div className={'flex text-left  mt-5 '}>
                     <span className={'text-gray-700'}>New to cosb?</span>
-                    <span className={'cursor-pointer font-semibold hover:underline ml-4'}>Sign up now</span>
+                    <Link href={'/signup'}>
+                        <span className={'cursor-pointer font-semibold hover:underline ml-4'}>Sign up now</span>
+                    </Link>
                 </div>
 
             </motion.div>

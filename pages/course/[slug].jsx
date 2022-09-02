@@ -17,9 +17,10 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 import Footer from "../../components/Footer";
+import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
 
 export const getStaticPaths = async () => {
-    const res = await axios.get('https://cosbapi.herokuapp.com/api/courses/all-courses-view/');
+    const res = await axios.get(ALL_COURSES);
     const paths = res.data.map(course => ({
         params: {
             slug: course.id.toString(),
@@ -32,7 +33,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}) => {
-    const res = await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-detail-view/${params.slug}`);
+    const res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
     return {
         props: {
             course: res.data,
