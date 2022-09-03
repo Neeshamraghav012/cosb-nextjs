@@ -2,8 +2,25 @@ import Navbar from "../../components/Navbar";
 import {motion} from "framer-motion";
 import Footer from "../../components/Footer";
 import Link from "next/link";
+import {useState} from "react";
+import {LOGIN} from "../../config/constants";
+import axios from "axios";
 
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await axios.post(LOGIN, {
+            username,
+            password,
+        })
+            .then((res) => {
+                console.log(res.data);
+            })
+    }
+
     return (
         <div>
             <Navbar/>
@@ -11,10 +28,14 @@ const Login = () => {
                 <h1 className={'font-bold text-3xl'}>Log in to cosb</h1>
                 <div className={'flex flex-col mt-10'}>
                     <label className={'my-2'}>Username or Email</label>
-                    <input type={'text'} className={'border-solid border-grey-300 border-1 rounded-lg p-2 outline-black'}/>
+                    <input type={'text'} className={'border-solid border-grey-300 border-1 rounded-lg p-2 outline-black'} onChange={(event) => {
+                        setUsername(event.target.value);
+                    }} />
 
                     <label className={'my-2'}>Password</label>
-                    <input type={'password'} className={'border-solid border-grey-300 border-1 rounded-lg p-2 outline-black'}/>
+                    <input type={'password'} className={'border-solid border-grey-300 border-1 rounded-lg p-2 outline-black'} onChange={() => {
+                        setPassword(event.target.value);
+                    }} />
                 </div>
                 <motion.div whileHover={{scale:1.05}} className={'mt-2'}>
                     <span className={'cursor-pointer hover:underline text-left'}>Forgot Password?</span>
