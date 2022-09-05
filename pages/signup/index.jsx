@@ -5,6 +5,7 @@ import Link from "next/link";
 import {useState} from "react";
 import axios from "axios";
 import {SIGNUP} from "../../config/constants";
+import Head from "next/head";
 
 const Signup = () => {
     const [username, setUsername] = useState("");
@@ -25,7 +26,9 @@ const Signup = () => {
 
     return (
         <div>
-            <Navbar/>
+            <Head>
+                <title>Sign up - cosb</title>
+            </Head>
             <motion.div animate={{scale:[0.8,1]}} transition={{duration:0.3}} className={'flex flex-col mx-auto justify-center items-center mt-20 container py-20 lg:w-1/3 md:w-1/2 rounded-3xl shadow-2xl border-1 border-neutral-200'}>
                 <h1 className={'font-bold text-3xl'}>Sign up to cosb</h1>
                 <div className={'flex flex-col mt-10'}>
@@ -55,7 +58,6 @@ const Signup = () => {
                 </div>
             </motion.div>
 
-            <Footer className={'mt-20'}/>
         </div>
     );
 }

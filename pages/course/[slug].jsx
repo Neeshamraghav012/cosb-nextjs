@@ -18,6 +18,7 @@ import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
+import Head from "next/head";
 
 export const getStaticPaths = async () => {
     const res = await axios.get(ALL_COURSES);
@@ -94,7 +95,9 @@ export default function CoursePage({course}) {
         </div>
     ) : (
         <div className={'bg-grey'}>
-            <Navbar/>
+            <Head>
+                <title>{title}</title>
+            </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}
                 <div className={'hidden md:flex flex-col w-2/3'}>
@@ -135,7 +138,6 @@ export default function CoursePage({course}) {
                 </div>
 
             </div>
-            <Footer className={'mt-5'} />
         </div>
     )
 }

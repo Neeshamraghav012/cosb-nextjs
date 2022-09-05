@@ -10,10 +10,18 @@ import Box from "@mui/material/Box";
 import axios from "axios";
 import Footer from "../components/Footer";
 import {HOME_COURSES, SEARCH_COURSES} from "../config/constants";
+import {isLoggedin} from "../utility/Auth";
 
 export default function Home() {
+    const [isLogged, setIsLogged] = useState(false);
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
+    useEffect(() => {
+        isLoggedin().then(res => {
+            setIsLogged(res)
+        })
+    }, [])
+
     useEffect(() => {
         async function fetchData() {
             await axios.get(HOME_COURSES)
@@ -47,7 +55,6 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Navbar/>
           <Action onSearchChange={onSearchChange}/>
 
 
@@ -57,19 +64,27 @@ export default function Home() {
                     {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
                 </div>
             ) : (
-                courseData.map(course => (
-                    <Card key={course.id}
-                          id={course.id}
-                          title={course.name}
-                          description={course.description}
-                          image={course.image}
-                          rating={course.overall_rating}
-                          platform={course.platform}
-                          price={course.price}
-                    />))
+                courseData.length > 0 ? (
+                        courseData.map(course => (
+                            <Card key={course.id}
+                                  id={course.id}
+                                  title={course.name}
+                                  description={course.description}
+                                  image={course.image}
+                                  rating={course.overall_rating}
+                                  platform={course.platform}
+                                  price={course.price}
+                                  isLogged={isLogged}
+                            />))
+                    ) : (
+                            <div className={'h-screen'}>
+                                <h1 className={'text-center text-3xl mt-20'}>No courses found</h1>
+                            </div>
+                    )
+
+
             ) }
 
-            <Footer className={'bottom-0'}/>
 
         </div>
 
