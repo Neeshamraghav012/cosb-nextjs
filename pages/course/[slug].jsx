@@ -125,6 +125,7 @@ export default function CoursePage({course}) {
                         link={link}
                         desc = {desc}
                     />
+                    
                     {/*<NavigationCard/>*/}
                     <InfoCardMobile
                         platform={platform}
