@@ -107,7 +107,7 @@ export default function CoursePage({course}) {
                     <InfoCard
                         image={image}
                         platform={platform}
-                        price={price === '0' ? 'Free' : 'Free'}
+                        price={price === '0' ? 'Free' : price}
                         language={language}
                         certificate={certificate ? 'Certificate Available' : 'Certificate Available'}
                         link={link}
@@ -128,7 +128,7 @@ export default function CoursePage({course}) {
                     {/*<NavigationCard/>*/}
                     <InfoCardMobile
                         platform={platform}
-                        price={price === '0' ? 'Free' : 'Free'}
+                        price={price === '0' ? 'Free' : price}
                         language={language}
                         certificate={certificate ? 'Certificate Available' : 'Certificate Available'}
                     />
