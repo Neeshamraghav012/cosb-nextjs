@@ -66,16 +66,16 @@ const Footer = ({className}) => {
 			<span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 cosb™. All Rights Reserved.
 </span>
                         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                            <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            {/*<a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                                 <FacebookIcon/>
-                            </a>
-                            <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            </a>*/}
+                            <a href="https://www.instagram.com/cosb.live/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                                 <InstagramIcon/>
                             </a>
-                            <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            {/*<a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                                 <TwitterIcon/>
-                            </a>
-                            <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            </a>*/}
+                            <a href="https://www.linkedin.com/company/82995402/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                                 <LinkedInIcon/>
                             </a>
                         </div>

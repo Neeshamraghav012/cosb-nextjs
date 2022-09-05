@@ -53,6 +53,7 @@ export default function CoursePage({course}) {
     const [image, setImage] = useState("");
     const [rating, setRating] = useState(0);
     const [link, setLink] = useState("");
+    const [desc, setDesc] = useState("");
 
     useEffect(() => {
         setTitle(course.name);
@@ -64,6 +65,7 @@ export default function CoursePage({course}) {
         setRating(course.overall_rating);
         setLink(course.link);
         setLoading(false);
+        setDesc(course.description);
     }, [course]);
 
     // useEffect(() => {
@@ -99,7 +101,7 @@ export default function CoursePage({course}) {
                  {/*This is for Bigger Screens */}
                 <div className={'hidden md:flex flex-col w-2/3'}>
                     <TitleCard title={title} platform={platform} rating={rating} />
-                    {/*<DescriptionCard className={'mt-5'}/>*/}
+                    <DescriptionCard className={'mt-5'} desc = {desc} />
                 </div>
                 <div className={'hidden md:flex flex-col w-1/3 ml-5'}>
                     <InfoCard
@@ -121,6 +123,7 @@ export default function CoursePage({course}) {
                         rating={rating}
                         image={'https://i.imgur.com/mrIuHoC.jpg'}
                         link={link}
+                        desc = {desc}
                     />
                     {/*<NavigationCard/>*/}
                     <InfoCardMobile
