@@ -121,7 +121,7 @@ export default function CoursePage({course}) {
                         title={title}
                         platform={platform}
                         rating={rating}
-                        image={'https://i.imgur.com/mrIuHoC.jpg'}
+                        image={image}
                         link={link}
                         desc = {desc}
                     />
