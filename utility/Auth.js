@@ -12,20 +12,26 @@ export const RequestHeaders = {
 export const isLoggedin = () => new Promise((resolve, reject) => {
     if(!ISSERVER){
         const token = localStorage.getItem('token');
-        axios.post(TEST_TOKEN, {token: token})
-            .then(res => {
-                console.log(res.data)
-                if(res.status === 200){
-                    resolve(true)
-                }
-                else if(res.status === 500){
+        if(token){
+            axios.post(TEST_TOKEN, {token: token})
+                .then(res => {
+                    if(res.data.status) {
+                        if(res.data.status === 0) {
+                            resolve(false)
+                        }
+                    }
+                    else {
+                        resolve(true)
+                    }
+                })
+                .catch(err => {
                     resolve(false)
-                }
-            })
-            .catch(err => {
-                console.log(err)
-                resolve(false)
-            })
+                })
+        }
+        else {
+            resolve(false)
+        }
+
     }
 })
 

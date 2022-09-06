@@ -8,6 +8,7 @@ const Navbar = ()   => {
     const [isLogged, setIsLogged] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
+
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -15,6 +16,7 @@ const Navbar = ()   => {
     const handleClose = () => {
         setAnchorEl(null);
     }
+
 
     useEffect(() => {
         isLoggedin().then((res) => {
@@ -44,7 +46,7 @@ const Navbar = ()   => {
                                 'aria-labelledby': 'basic-button',
                             }}
                         >
-                            <MenuItem onClick={handleClose}>Profile</MenuItem>
+                            {/*<MenuItem onClick={handleClose}>Profile</MenuItem>*/}
                             <MenuItem onClick={() => {
                                 logout();
                                 handleClose();

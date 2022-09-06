@@ -4,22 +4,54 @@ import {useState} from "react";
 import axios from "axios";
 import {SIGNUP} from "../../config/constants";
 import Head from "next/head";
+import AlertTitle from "@mui/material/AlertTitle";
+import Alert from "@mui/material/Alert";
+import {ButtonLoading} from "../../components/LoadingComponents";
 
 const Signup = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        setIsLoading(true);
         await axios.post(SIGNUP, {
             username,
             email,
             password,
         })
             .then((res) => {
-                console.log(res.data);
+                if(res.data.status) {
+                    setSuccess(true);
+                    setIsLoading(false);
+                }
+                else {
+                    if(res.data.username) {
+                        setError(res.data.username[0]);
+                    }
+                    else if(res.data.email) {
+                        setError(res.data.email[0]);
+                    }
+                    else if(res.data.password) {
+                        setError(res.data.password[0]);
+                    }
+                    setIsLoading(false);
+                }
+            })
+            .catch((err) => {
+                if(err.response.data.username) {
+                    setError(err.response.data.username[0]);
+                }
+                else if(err.response.data.email) {
+                    setError(err.response.data.email[0]);
+                }
+                else if(err.response.data.password) {
+                    setError(err.response.data.password[0]);
+                }
+                setIsLoading(false);
             })
     }
 
@@ -28,6 +60,16 @@ const Signup = () => {
             <Head>
                 <title>Sign up - cosb</title>
             </Head>
+            <div className={'fixed top-14 left-0 right-0'}>
+                {success && (
+                    <Alert severity="success" variant={'filled'} onClose={() => {
+                        setSuccess(false);
+                    }}>
+                        <AlertTitle>Success</AlertTitle>
+                        You have successfully signed up. Please login to continue.
+                    </Alert>
+                )}
+            </div>
             <motion.div animate={{scale:[0.8,1]}} transition={{duration:0.3}} className={'flex flex-col mx-auto justify-center items-center mt-20 container py-20 lg:w-1/3 md:w-1/2 rounded-3xl shadow-2xl border-1 border-neutral-200'}>
                 <h1 className={'font-bold text-3xl'}>Sign up to cosb</h1>
                 <div className={'flex flex-col mt-10'}>
@@ -48,7 +90,12 @@ const Signup = () => {
                 </div>
                 <span className={'text-red-500'}>{error}</span>
 
-                <motion.button whileHover={{scale:1.1}} className={'py-2 px-6 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={handleSubmit} >Sign up</motion.button>
+                <motion.button whileHover={{scale:1.1}} className={'py-2 w-28 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={handleSubmit} >
+                    {isLoading ?
+                        <ButtonLoading/>
+                        : "Sign up"
+                    }
+                </motion.button>
 
                 <div className={'flex text-left  mt-5 '}>
                     <span className={'text-gray-700'}>Been here before?</span>
