@@ -1,29 +1,59 @@
-import Navbar from "../../components/Navbar";
 import {motion} from "framer-motion";
-import Footer from "../../components/Footer";
 import Link from "next/link";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {LOGIN} from "../../config/constants";
 import axios from "axios";
+import {login} from "../../utility/Auth";
+import {isLoggedin} from "../../utility/Auth";
+import Head from "next/head";
+import {ButtonLoading} from "../../components/LoadingComponents";
 
 const Login = () => {
+    const [isLogged, setIsLogged] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [isLoaded, setIsLoaded] = useState(true);
+
+
+    useEffect(() => {
+        isLoggedin().then((res) => {
+            setIsLogged(res);
+        });
+    }, []);
+
+    if(isLogged) {
+        window.location.href = "/";
+    }
+
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        setIsLoaded(false);
         await axios.post(LOGIN, {
             username,
             password,
         })
             .then((res) => {
-                console.log(res.data);
-            })
+                let token = res.data.access;
+                if(token) {
+                    login(token, username);
+                    window.location.href = "/";
+                }
+                else {
+                    setError("Username or password is incorrect");
+                    setIsLoaded(true);
+                }
+            }).catch((err) => {
+                setError("Username or password is incorrect");
+                setIsLoaded(true);
+            });
     }
 
     return (
         <div>
-            <Navbar/>
+            <Head>
+                <title>Login - cosb</title>
+            </Head>
             <motion.div animate={{scale:[0.8,1]}} transition={{duration:0.3}} className={'flex flex-col mx-auto justify-center items-center mt-20 container py-20 lg:w-1/3 md:w-1/2 rounded-3xl shadow-2xl border-1 border-neutral-200'}>
                 <h1 className={'font-bold text-3xl'}>Log in to cosb</h1>
                 <div className={'flex flex-col mt-10'}>
@@ -41,7 +71,11 @@ const Login = () => {
                     <span className={'cursor-pointer hover:underline text-left'}>Forgot Password?</span>
                 </motion.div>
 
-                <motion.button whileHover={{scale:1.1}} className={'py-2 px-6 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'}>Log in</motion.button>
+                <span className={'mt-1 text-red-500'}>{error}</span>
+
+                <motion.button whileHover={{scale:1.1}} className={'py-2 w-24 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={() => {
+                    handleSubmit();
+                }}>{isLoaded ? 'Log in' : <ButtonLoading/>}</motion.button>
 
                 <div className={'flex text-left  mt-5 '}>
                     <span className={'text-gray-700'}>New to cosb?</span>
@@ -52,7 +86,6 @@ const Login = () => {
 
             </motion.div>
 
-            <Footer className={'mt-20'}/>
         </div>
     );
 }

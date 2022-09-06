@@ -11,13 +11,15 @@ import RelatedCoursesMobile
     from "../../components/pageComponents/coursePageComponents/smallScreenComponents/RelatedCoursesMobile";
 import ReviewsMobile from "../../components/pageComponents/coursePageComponents/smallScreenComponents/ReviewsMobile";
 import BottomButton from "../../components/pageComponents/coursePageComponents/smallScreenComponents/BottomButton";
-import {useState} from "react";
-import {useEffect} from "react";
+import {useState, useEffect} from "react";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
+import Head from "next/head";
+import {IdContext} from "../../context/IdContext";
+
 
 export const getStaticPaths = async () => {
     const res = await axios.get(ALL_COURSES);
@@ -96,7 +98,9 @@ export default function CoursePage({course}) {
         </div>
     ) : (
         <div className={'bg-grey'}>
-            <Navbar/>
+            <Head>
+                <title>{title}</title>
+            </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}
                 <div className={'hidden md:flex flex-col w-2/3'}>
@@ -117,7 +121,12 @@ export default function CoursePage({course}) {
 
                  {/*This is for Smaller Screens*/}
                 <div className={'flex md:hidden flex-col'}>
-                    <TitleCardMobile
+
+                    
+                    
+
+                    <IdContext.Provider value={slug}>
+                        <TitleCardMobile
                         title={title}
                         platform={platform}
                         rating={rating}
@@ -125,7 +134,8 @@ export default function CoursePage({course}) {
                         link={link}
                         desc = {desc}
                     />
-                    
+                    </IdContext.Provider>
+
                     {/*<NavigationCard/>*/}
                     <InfoCardMobile
                         platform={platform}
@@ -139,7 +149,6 @@ export default function CoursePage({course}) {
                 </div>
 
             </div>
-            <Footer className={'mt-5'} />
         </div>
     )
 }

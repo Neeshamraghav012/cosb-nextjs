@@ -10,13 +10,27 @@ import Box from "@mui/material/Box";
 import axios from "axios";
 import Footer from "../components/Footer";
 import {HOME_COURSES, SEARCH_COURSES} from "../config/constants";
+import {isLoggedin} from "../utility/Auth";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function Home() {
+    const [isLogged, setIsLogged] = useState(false);
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
+    const [hasMore, setHasMore] = useState(true);
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        isLoggedin().then(res => {
+            setIsLogged(res)
+        })
+    }, [])
+
     useEffect(() => {
         async function fetchData() {
-            await axios.get(HOME_COURSES)
+            await axios.post(HOME_COURSES, {
+                "count": count.toString()
+            })
                 .then(res => {
                     setCourseData(res.data);
 
@@ -26,15 +40,32 @@ export default function Home() {
     fetchData().then(r => setLoading(false));
     }, [])
 
+    const fetchMoreData = () => {
+        setCount(count + 5);
+        axios.post(HOME_COURSES, {
+            "count": count.toString()
+        })
+            .then(res => {
+                if(res.data.status) {
+                    if(res.data.status === 0) {
+                        setHasMore(false)
+                    }
+                }
+                setCourseData(courseData.concat(res.data));
+            })
+    }
+
     const onSearchChange = async (e) => {
         const searchValue = e.target ? e.target.value : e.current.value;
         setLoading(true);
         searchValue.length > 0 ? await axios.get(`${SEARCH_COURSES}${searchValue}`).then(res => {
             setCourseData(res.data);
             setLoading(false);
+            setHasMore(false);
         }) : await axios.get(HOME_COURSES).then(res => {
             setCourseData(res.data);
             setLoading(false);
+            setHasMore(true);
         })
 
     }
@@ -47,7 +78,6 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <Navbar/>
           <Action onSearchChange={onSearchChange}/>
 
 
@@ -57,19 +87,44 @@ export default function Home() {
                     {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
                 </div>
             ) : (
-                courseData.map(course => (
-                    <Card key={course.id}
-                          id={course.id}
-                          title={course.name}
-                          description={course.description}
-                          image={course.image}
-                          rating={course.overall_rating}
-                          platform={course.platform}
-                          price={course.price}
-                    />))
+                <InfiniteScroll
+                    dataLength={courseData.length}
+                    next={fetchMoreData}
+                    hasMore={hasMore}
+                    loader={
+                        <div className={'flex justify-center  w-full h-screen'}>
+                            <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
+                            {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
+                        </div>
+                    }
+                    endMessage={
+                        <p style={{textAlign: 'center'}}>
+                            <b>Yay! You have seen it all</b>
+                        </p>
+                    }
+                >
+                    {courseData.length > 0 ? (
+                        courseData.map(course => (
+                            <Card key={course.id}
+                                  id={course.id}
+                                  title={course.name}
+                                  description={course.description}
+                                  image={course.image}
+                                  rating={course.overall_rating}
+                                  platform={course.platform}
+                                  price={course.price}
+                                  isLogged={isLogged}
+                            />))
+                    ) : (
+                        <div className={'h-screen'}>
+                            <h1 className={'text-center text-3xl mt-20'}>No courses found</h1>
+                        </div>
+                    )}
+                </InfiniteScroll>
+
+
             ) }
 
-            <Footer className={'bottom-0'}/>
 
         </div>
 
