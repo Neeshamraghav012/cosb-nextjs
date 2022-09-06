@@ -1,6 +1,4 @@
-import Navbar from "../../components/Navbar";
 import {motion} from "framer-motion";
-import Footer from "../../components/Footer";
 import Link from "next/link";
 import {useState} from "react";
 import axios from "axios";
@@ -11,6 +9,7 @@ const Signup = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,6 +46,7 @@ const Signup = () => {
                         setPassword(event.target.value);
                     }} />
                 </div>
+                <span className={'text-red-500'}>{error}</span>
 
                 <motion.button whileHover={{scale:1.1}} className={'py-2 px-6 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={handleSubmit} >Sign up</motion.button>
 

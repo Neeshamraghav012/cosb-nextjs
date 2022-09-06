@@ -3,6 +3,12 @@ import axios from "axios";
 
 const ISSERVER = typeof window === "undefined";
 
+export const RequestHeaders = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': `Bearer ${!ISSERVER ? localStorage.getItem('token') : null}`
+}
+
 export const isLoggedin = () => new Promise((resolve, reject) => {
     if(!ISSERVER){
         const token = localStorage.getItem('token');

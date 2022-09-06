@@ -24,7 +24,7 @@ const Navbar = ()   => {
     }, [isLoaded]);
 
     return (
-        <div className={'flex justify-between items-center py-5 px-10 bg-black text-white'}>
+        <div className={'flex justify-between items-center py-5 md:px-10 px-2 bg-black text-white'}>
             <div className={'flex items-center'}>
                 <span className={'font-bold text-2xl'}>cosb</span>
             </div>
@@ -49,6 +49,7 @@ const Navbar = ()   => {
                                 logout();
                                 handleClose();
                                 setIsLoaded(false);
+                                window.location.reload();
                             }}>Logout</MenuItem>
                         </Menu>
                     </>

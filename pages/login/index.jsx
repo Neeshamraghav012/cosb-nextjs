@@ -5,8 +5,8 @@ import {LOGIN} from "../../config/constants";
 import axios from "axios";
 import {login} from "../../utility/Auth";
 import {isLoggedin} from "../../utility/Auth";
-import CircularProgress from '@mui/material/CircularProgress'
 import Head from "next/head";
+import {ButtonLoading} from "../../components/LoadingComponents";
 
 const Login = () => {
     const [isLogged, setIsLogged] = useState(false);
@@ -14,6 +14,8 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(true);
+
+
     useEffect(() => {
         isLoggedin().then((res) => {
             setIsLogged(res);
@@ -73,9 +75,7 @@ const Login = () => {
 
                 <motion.button whileHover={{scale:1.1}} className={'py-2 w-24 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={() => {
                     handleSubmit();
-                }}>{isLoaded ? 'Log in' : <CircularProgress size={'1rem'} sx={{
-                    color: 'white',
-                }} />}</motion.button>
+                }}>{isLoaded ? 'Log in' : <ButtonLoading/>}</motion.button>
 
                 <div className={'flex text-left  mt-5 '}>
                     <span className={'text-gray-700'}>New to cosb?</span>

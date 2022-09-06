@@ -11,14 +11,15 @@ import RelatedCoursesMobile
     from "../../components/pageComponents/coursePageComponents/smallScreenComponents/RelatedCoursesMobile";
 import ReviewsMobile from "../../components/pageComponents/coursePageComponents/smallScreenComponents/ReviewsMobile";
 import BottomButton from "../../components/pageComponents/coursePageComponents/smallScreenComponents/BottomButton";
-import {useState} from "react";
-import {useEffect} from "react";
+import {useState, useEffect} from "react";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
 import Head from "next/head";
+import {IdContext} from "../../context/IdContext";
+
 
 export const getStaticPaths = async () => {
     const res = await axios.get(ALL_COURSES);
@@ -118,13 +119,15 @@ export default function CoursePage({course}) {
 
                  {/*This is for Smaller Screens*/}
                 <div className={'flex md:hidden flex-col'}>
-                    <TitleCardMobile
-                        title={title}
-                        platform={platform}
-                        rating={rating}
-                        image={'https://i.imgur.com/mrIuHoC.jpg'}
-                        link={link}
-                    />
+                    <IdContext.Provider value={slug}>
+                        <TitleCardMobile
+                            title={title}
+                            platform={platform}
+                            rating={rating}
+                            image={'https://i.imgur.com/mrIuHoC.jpg'}
+                            link={link}
+                        />
+                    </IdContext.Provider>
                     {/*<NavigationCard/>*/}
                     <InfoCardMobile
                         platform={platform}
