@@ -1,14 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Navbar from "../components/Navbar";
 import Action from "../components/pageComponents/homePageComponents/Action";
 import Card from "../components/pageComponents/homePageComponents/Card";
 import {useEffect, useState} from "react";
-import {CircularProgress, Skeleton} from "@mui/material";
+import {CircularProgress} from "@mui/material";
 import Box from "@mui/material/Box";
 import axios from "axios";
-import Footer from "../components/Footer";
 import {HOME_COURSES, SEARCH_COURSES} from "../config/constants";
 import {isLoggedin} from "../utility/Auth";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -37,13 +33,13 @@ export default function Home() {
                 })
 
         }
-    fetchData().then(r => setLoading(false));
+    fetchData().then(() => setLoading(false));
     }, [])
 
     const fetchMoreData = () => {
         setCount(count + 5);
         axios.post(HOME_COURSES, {
-            "count": count.toString()
+            "count": (count + 5).toString()
         })
             .then(res => {
                 if(res.data.status) {
