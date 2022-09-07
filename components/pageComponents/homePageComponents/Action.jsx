@@ -19,8 +19,8 @@ const Action =({onSearchChange}) => {
                         searchRef.current.value = 'Python';
                         onSearchChange(searchRef);
                     }} />
-                    <Chip label={'Data Structures'} className={'mr-2'} onClick={() => {
-                        searchRef.current.value = 'Data Structures';
+                    <Chip label={'Data Science'} className={'mr-2'} onClick={() => {
+                        searchRef.current.value = 'Data Science';
                         onSearchChange(searchRef);
                     }}/>
                     <Chip label={'Development'} className={'mr-2'} onClick={() => {
