@@ -58,7 +58,9 @@ export default function Home() {
             setCourseData(res.data);
             setLoading(false);
             setHasMore(false);
-        }) : await axios.get(HOME_COURSES).then(res => {
+        }) : await axios.post(HOME_COURSES, {
+            "count": "0"
+        }).then(res => {
             setCourseData(res.data);
             setLoading(false);
             setHasMore(true);

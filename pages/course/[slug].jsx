@@ -144,7 +144,7 @@ export default function CoursePage({course}) {
                         certificate={certificate ? 'Certificate Available' : 'Certificate Available'}
                     />
                     {/*<RelatedCoursesMobile/>*/}
-                    {/*<ReviewsMobile/>*/}
+                    <ReviewsMobile id={slug}/>
                     {/*<BottomButton/>*/}
                 </div>
 
