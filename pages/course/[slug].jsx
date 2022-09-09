@@ -105,7 +105,7 @@ export default function CoursePage({course}) {
                 <meta name="description" content={desc} />
                 <meta property="og:title" content={title} />
                 <meta property="og:type" content="article" />
-                <meta property="og:image" content={image} />
+                <meta property="og:image" content="https://res.cloudinary.com/hire-easy/image/upload/v1649689229/cld-sample.jpg" />
             </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}
