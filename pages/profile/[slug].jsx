@@ -12,7 +12,6 @@ export default function ProfilePage() {
 
     return (
         <div className={'bg-gray'}>
-            <Navbar/>
             <ProfileCard
                 image={'https://imgur.com/R076K0l.jpg'}
                 name={'Neesham'}

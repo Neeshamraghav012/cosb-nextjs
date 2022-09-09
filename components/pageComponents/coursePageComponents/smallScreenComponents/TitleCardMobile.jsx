@@ -13,7 +13,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
+
 const TitleCardMobile = ({image, title, platform, rating, link, desc}) => {
+
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -33,7 +35,7 @@ const TitleCardMobile = ({image, title, platform, rating, link, desc}) => {
     return (
         <div className={'bg-white border-neutral-200 rounded-lg'}>
             <div className={''}>
-                <Image src={image} layout={'responsive'} width={'100%'} height={'60'} />
+                <Image src={image ? image : "/../cosb.jpeg"} layout={'responsive'} width={'100%'} height={'60'} />
             </div>
             <div className={'mx-3 flex flex-col'}>
                 <div className={'flex mt-1'}>

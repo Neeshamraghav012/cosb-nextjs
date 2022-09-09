@@ -9,8 +9,28 @@ import {Rating} from "@mui/material";
 import BookmarkIcon from "../../BookmarkIcon";
 import cosb from '../../../public/cosb.jpeg'
 import Link from "next/link";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import {useState} from "react";
+import axios from "axios";
+import {COURSE_STATUS} from "../../../config/constants";
+import {getToken} from "../../../utility/Auth";
 
-const Card = ({ title, description, image, rating, platform, price, id }) => {
+const Card = ({ title, description, image, rating, platform, price, id, isLogged }) => {
+    const [status, setStatus] = useState('');
+
+
+    const handleChange = async (event) => {
+        setStatus(event.target.value);
+        await axios.post(COURSE_STATUS, {
+            id,
+            status: event.target.value,
+            token: getToken(),
+        })
+    };
+
   return (
     <motion.div whileHover={{scale: 1.03}} className="pl-10 border-neutral-200 border-1 pr-5 py-10 rounded-3xl shadow-md container md:w-2/3 flex md:flex-row flex-col mx-auto my-2">
         <div className={'flex flex-col md:w-4/5 md:border-r-1 pr-4'}>
@@ -72,7 +92,7 @@ const Card = ({ title, description, image, rating, platform, price, id }) => {
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{'Self Paced'}</span>
             </div>
-            <div className={'p-2 flex'}>
+            <div className={`${isLogged ? 'border-b-1' : ''} p-2 flex`}>
                 <AttachMoneyOutlinedIcon
                     fontSize={'small'}
                     sx={{
@@ -81,6 +101,26 @@ const Card = ({ title, description, image, rating, platform, price, id }) => {
                 />
                 <span className={'ml-1 text-sm text-gray-600'}>{price === 0 ? 'Free Course' : price}</span>
             </div>
+            {isLogged && <div className='p-2 flex'>
+                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                    <InputLabel id="demo-select-small">Status</InputLabel>
+                    <Select
+                        disableUnderline
+                        labelId="demo-select-small"
+                        id="demo-select-small"
+                        value={status}
+                        label="Age"
+                        onChange={handleChange}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={'Doing'}>Doing</MenuItem>
+                        <MenuItem value={'Done'}>Done</MenuItem>
+                        <MenuItem value={'Bought'}>Bought</MenuItem>
+                    </Select>
+                </FormControl>
+            </div>}
         </div>
 
     </motion.div>
