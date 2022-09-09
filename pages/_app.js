@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
+        
         <Script
           id="gtag-init"
           strategy="afterInteractive"

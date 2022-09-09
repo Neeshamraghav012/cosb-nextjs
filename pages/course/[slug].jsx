@@ -19,6 +19,8 @@ import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
 import Head from "next/head";
 import {IdContext} from "../../context/IdContext";
+import Script from 'next/script'
+
 
 
 export const getStaticPaths = async () => {
@@ -56,6 +58,7 @@ export default function CoursePage({course}) {
     const [rating, setRating] = useState(0);
     const [link, setLink] = useState("");
     const [desc, setDesc] = useState("");
+    const [id, setId] = useState("");
 
     useEffect(() => {
         setTitle(course.name);
@@ -68,6 +71,7 @@ export default function CoursePage({course}) {
         setLink(course.link);
         setLoading(false);
         setDesc(course.description);
+        setId(course.id);
     }, [course]);
 
     // useEffect(() => {
@@ -101,10 +105,11 @@ export default function CoursePage({course}) {
 
         <div className={'bg-grey'}>
             <Head>
-                <title>{title}</title>
-                <meta name="description" content={desc} />
+                <title>cosb - {title}</title>
+                <meta property="og:description" content={desc} />
                 <meta property="og:title" content={title} />
                 <meta property="og:type" content="article" />
+                <meta property="og:url" content = {`https://www.cosb.live/course/${id}/`}/>
                 <meta property="og:image" content="https://res.cloudinary.com/hire-easy/image/upload/v1649689229/cld-sample.jpg" />
             </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
