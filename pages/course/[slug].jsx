@@ -97,9 +97,15 @@ export default function CoursePage({course}) {
             </div>
         </div>
     ) : (
+
+
         <div className={'bg-grey'}>
             <Head>
                 <title>{title}</title>
+                <meta name="description" content={desc} />
+                <meta property="og:title" content={title} />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content={image} />
             </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}

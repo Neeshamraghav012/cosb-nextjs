@@ -71,7 +71,7 @@ export default function Home() {
     return  (
         <div>
           <Head>
-            <title>cosb</title>
+            <title>cosb - Find best learning resources on the Internet!</title>
             <meta name="description" content="cosb" />
             <link rel="icon" href="/favicon.ico" />
           </Head>
