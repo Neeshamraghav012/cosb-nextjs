@@ -43,6 +43,15 @@ export const getStaticProps = async ({params}) => {
     };
 }
 
+// export const getServerSideProps = async ({params}) => {
+//     let res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
+//     return {
+//         props: {
+//             course: res.data,
+//         }
+//     }
+// }
+
 export default function CoursePage({course}) {
     const router = useRouter();
     const { slug } = router.query;
@@ -93,21 +102,21 @@ export default function CoursePage({course}) {
     return (
         <>
             <NextSeo
-                title={`cosb - ${title}`}
-                description={desc}
+                title={`cosb - ${course.name}`}
+                description={course.description}
                 openGraph={{
-                    title: title,
-                    description: desc,
+                    title: course.name,
+                    description: course.description,
                     images: [
                         {
-                            url: image,
+                            url: course.image,
                             width: 800,
                             height: 600,
                             alt: 'Og Image Alt',
 
                         },
-                        { url: image },
-                        { url: image },
+                        { url: course.image },
+                        { url: course.image },
                     ],
                 }}/>
             {loading ?
