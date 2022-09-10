@@ -21,36 +21,36 @@ import {IdContext} from "../../context/IdContext";
 import {NextSeo} from "next-seo";
 
 
-export const getStaticPaths = async () => {
-    const res = await axios.get(ALL_COURSES);
-    const paths = res.data.map(course => ({
-        params: {
-            slug: course.id.toString(),
-        },
-    }));
-    return {
-        paths,
-        fallback: false,
-    };
-}
-
-export const getStaticProps = async ({params}) => {
-    const res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
-    return {
-        props: {
-            course: res.data,
-        },
-    };
-}
-
-// export const getServerSideProps = async ({params}) => {
-//     let res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
+// export const getStaticPaths = async () => {
+//     const res = await axios.get(ALL_COURSES);
+//     const paths = res.data.map(course => ({
+//         params: {
+//             slug: course.id.toString(),
+//         },
+//     }));
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// }
+//
+// export const getStaticProps = async ({params}) => {
+//     const res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
 //     return {
 //         props: {
 //             course: res.data,
-//         }
-//     }
+//         },
+//     };
 // }
+
+export const getServerSideProps = async ({params}) => {
+    let res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
+    return {
+        props: {
+            course: res.data,
+        }
+    }
+}
 
 export default function CoursePage({course}) {
     const router = useRouter();
