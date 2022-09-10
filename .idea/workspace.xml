@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="ServerSidedProps enabled" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DCCchONo2g4Wv7Ruywx4vcpD2u" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/himanshu/portfolio/cosb-next/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/components/pageComponents/coursePageComponents" />
+      <recent name="$PROJECT_DIR$/components/pageComponents/homePageComponents" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="" />
+      <created>1660193761242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660193761242</updated>
+      <workItem from="1660193763593" duration="2794000" />
+      <workItem from="1660197947600" duration="13925000" />
+      <workItem from="1660215141909" duration="3688000" />
+      <workItem from="1660224639770" duration="28227000" />
+      <workItem from="1661018155469" duration="8367000" />
+      <workItem from="1661073159527" duration="16146000" />
+      <workItem from="1661336360262" duration="657000" />
+      <workItem from="1661355458215" duration="4262000" />
+      <workItem from="1662029543592" duration="18000" />
+      <workItem from="1662029569787" duration="23199000" />
+      <workItem from="1662298652716" duration="4000" />
+      <workItem from="1662399167879" duration="20755000" />
+      <workItem from="1662478271616" duration="641000" />
+      <workItem from="1662482084123" duration="7146000" />
+      <workItem from="1662576435499" duration="13000" />
+      <workItem from="1662631074804" duration="1908000" />
+      <workItem from="1662810379423" duration="6338000" />
+    </task>
+    <task id="LOCAL-00001" summary="Course card updated and Course page made">
+      <created>1660230558096</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660230558096</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Course page made for mobile">
+      <created>1660306230369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660306230369</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Profile page done">
+      <created>1660376025790</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660376025790</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Home Page and Course Page APIs implemented">
+      <created>1661079260698</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661079260698</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Home Page and Course Page APIs implemented">
+      <created>1661079377317</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661079377317</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added functions getStaticProps and getStaticPaths to create dynamic routes for Course Page">
+      <created>1661091775425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661091775425</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated course page">
+      <created>1661100330755</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661100330755</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated course page again">
+      <created>1661100913144</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661100913144</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Footer Added">
+      <created>1661171954470</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661171954470</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Sign Up login pages added">
+      <created>1662038319737</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1662038319737</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Share utility added&#10;Disabled blue select on mobile devices - edited global.css&#10;API endpoints extracted to constants.js">
+      <created>1662132565117</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1662132565117</updated>
+    </task>
+    <task id="LOCAL-00012" summary="implemented LOGIN SIGNUP apis&#10;&#10;TODO: Create separate AUTH utility">
+      <created>1662239957506</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1662239957507</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Login and Auth Done&#10;Navbar updated - Added Logout, login, signup buttons&#10;Added Status button to Course Cards">
+      <created>1662411474397</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1662411474397</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Write Review implemented">
+      <created>1662464078854</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1662464078854</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Sign Up page done&#10;Load More done&#10;Write Review Done">
+      <created>1662485835559</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1662485835559</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Image logic implemented to show cosb when image is null">
+      <created>1662487775707</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1662487775707</updated>
+    </task>
+    <task id="LOCAL-00017" summary="count + 5 logic implemented">
+      <created>1662488511606</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1662488511607</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Data Structure -&gt; Data Science">
+      <created>1662546312441</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1662546312442</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fetch Reviews done for mobile screens">
+      <created>1662632656444</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1662632656444</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Next SEO">
+      <created>1662815166915</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1662815166915</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Course page optimized for SEO">
+      <created>1662821362017</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1662821362017</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Course page optimized for SEO">
+      <created>1662821930496</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662821930496</updated>
+    </task>
+    <task id="LOCAL-00023" summary="npm-lock removed">
+      <created>1662822093779</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1662822093779</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ServerSidedProps enabled">
+      <created>1662822325576</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1662822325576</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Course card updated and Course page made" />
+    <MESSAGE value="Course page made for mobile" />
+    <MESSAGE value="Profile page done" />
+    <MESSAGE value="Home Page and Course Page APIs implemented" />
+    <MESSAGE value="Added functions getStaticProps and getStaticPaths to create dynamic routes for Course Page" />
+    <MESSAGE value="updated course page" />
+    <MESSAGE value="updated course page again" />
+    <MESSAGE value="Footer Added" />
+    <MESSAGE value="Sign Up login pages added" />
+    <MESSAGE value="Share utility added&#10;Disabled blue select on mobile devices - edited global.css&#10;API endpoints extracted to constants.js" />
+    <MESSAGE value="implemented LOGIN SIGNUP apis&#10;&#10;TODO: Create separate AUTH utility" />
+    <MESSAGE value="Login and Auth Done&#10;Navbar updated - Added Logout, login, signup buttons&#10;Added Status button to Course Cards" />
+    <MESSAGE value="Write Review implemented" />
+    <MESSAGE value="Sign Up page done&#10;Load More done&#10;Write Review Done" />
+    <MESSAGE value="Image logic implemented to show cosb when image is null" />
+    <MESSAGE value="count + 5 logic implemented" />
+    <MESSAGE value="Data Structure -&gt; Data Science" />
+    <MESSAGE value="Fetch Reviews done for mobile screens" />
+    <MESSAGE value="Next SEO" />
+    <MESSAGE value="Course page optimized for SEO" />
+    <MESSAGE value="npm-lock removed" />
+    <MESSAGE value="ServerSidedProps enabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="ServerSidedProps enabled" />
+  </component>
+</project>

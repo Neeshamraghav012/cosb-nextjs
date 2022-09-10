@@ -65,6 +65,7 @@ export default function CoursePage({course}) {
     const [rating, setRating] = useState(0);
     const [link, setLink] = useState("");
     const [desc, setDesc] = useState("");
+    const [id, setId] = useState("");
 
     useEffect(() => {
         setTitle(course.name);
@@ -77,6 +78,7 @@ export default function CoursePage({course}) {
         setLink(course.link);
         setLoading(false);
         setDesc(course.description);
+        setId(course.id);
     }, [course]);
 
     // useEffect(() => {
@@ -127,6 +129,8 @@ export default function CoursePage({course}) {
             </div>
         </div>
     ) : (
+
+
         <div className={'bg-grey'}>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}
