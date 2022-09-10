@@ -17,8 +17,8 @@ import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
-import Head from "next/head";
 import {IdContext} from "../../context/IdContext";
+import {NextSeo} from "next-seo";
 
 
 export const getStaticPaths = async () => {
@@ -90,7 +90,28 @@ export default function CoursePage({course}) {
     // }, [slug])
 
 
-    return loading ? (
+    return (
+        <>
+            <NextSeo
+                title={`cosb - ${title}`}
+                description={desc}
+                openGraph={{
+                    title: title,
+                    description: desc,
+                    images: [
+                        {
+                            url: image,
+                            width: 800,
+                            height: 600,
+                            alt: 'Og Image Alt',
+
+                        },
+                        { url: image },
+                        { url: image },
+                    ],
+                }}/>
+            {loading ?
+        (
         <div className={'flex justify-center items-center w-full h-screen bg-gray-500'}>
             <div className={'bg-white p-5 rounded-lg border-gray-200 border-2'}>
                 <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
@@ -98,9 +119,6 @@ export default function CoursePage({course}) {
         </div>
     ) : (
         <div className={'bg-grey'}>
-            <Head>
-                <title>{title}</title>
-            </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}
                 <div className={'hidden md:flex flex-col w-2/3'}>
@@ -150,5 +168,6 @@ export default function CoursePage({course}) {
 
             </div>
         </div>
-    )
+    )}
+        </>)
 }
