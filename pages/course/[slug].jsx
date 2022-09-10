@@ -17,32 +17,39 @@ import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
 import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
-import Head from "next/head";
 import {IdContext} from "../../context/IdContext";
-import Script from 'next/script'
+import {NextSeo} from "next-seo";
 
 
+// export const getStaticPaths = async () => {
+//     const res = await axios.get(ALL_COURSES);
+//     const paths = res.data.map(course => ({
+//         params: {
+//             slug: course.id.toString(),
+//         },
+//     }));
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// }
+//
+// export const getStaticProps = async ({params}) => {
+//     const res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
+//     return {
+//         props: {
+//             course: res.data,
+//         },
+//     };
+// }
 
-export const getStaticPaths = async () => {
-    const res = await axios.get(ALL_COURSES);
-    const paths = res.data.map(course => ({
-        params: {
-            slug: course.id.toString(),
-        },
-    }));
-    return {
-        paths,
-        fallback: false,
-    };
-}
-
-export const getStaticProps = async ({params}) => {
-    const res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
+export const getServerSideProps = async ({params}) => {
+    let res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
     return {
         props: {
             course: res.data,
-        },
-    };
+        }
+    }
 }
 
 export default function CoursePage({course}) {
@@ -94,7 +101,28 @@ export default function CoursePage({course}) {
     // }, [slug])
 
 
-    return loading ? (
+    return (
+        <>
+            <NextSeo
+                title={`cosb - ${course.name}`}
+                description={course.description}
+                openGraph={{
+                    title: course.name,
+                    description: course.description,
+                    images: [
+                        {
+                            url: course.image,
+                            width: 800,
+                            height: 600,
+                            alt: 'Og Image Alt',
+
+                        },
+                        { url: course.image },
+                        { url: course.image },
+                    ],
+                }}/>
+            {loading ?
+        (
         <div className={'flex justify-center items-center w-full h-screen bg-gray-500'}>
             <div className={'bg-white p-5 rounded-lg border-gray-200 border-2'}>
                 <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
@@ -104,14 +132,6 @@ export default function CoursePage({course}) {
 
 
         <div className={'bg-grey'}>
-            <Head>
-                <title>cosb - {title}</title>
-                <meta property="og:description" content={desc} />
-                <meta property="og:title" content={title} />
-                <meta property="og:type" content="article" />
-                <meta property="og:url" content = {`https://www.cosb.live/course/${id}/`}/>
-                <meta property="og:image" content="https://res.cloudinary.com/hire-easy/image/upload/v1649689229/cld-sample.jpg" />
-            </Head>
             <div className={'lg:px-20 flex md:flex-row flex-col pt-20'}>
                  {/*This is for Bigger Screens */}
                 <div className={'hidden md:flex flex-col w-2/3'}>
@@ -161,5 +181,6 @@ export default function CoursePage({course}) {
 
             </div>
         </div>
-    )
+    )}
+        </>)
 }
