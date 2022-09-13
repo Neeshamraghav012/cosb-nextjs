@@ -12,6 +12,7 @@ import Card from "../homePageComponents/Card";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SchoolIcon from '@mui/icons-material/School';
 import PaidIcon from '@mui/icons-material/Paid';
+import cosb from '../../../public/cosb.jpeg'
 
 const ProfileCard = ({image, username, name, posts, followers, following, bio, data, loading}) => {
     const [value, setValue] = useState(1);
@@ -73,10 +74,11 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                                 key={index}
                                                 title={item.course.name}
                                                 description={item.course.description}
-                                                image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                                image={item.course.image}
                                                 rating={item.course.overall_rating}
                                                 platform={item.course.platform}
                                                 price={item.course.price}
+                                                id={item.course.id}
                                             />
                                         )
                                     }
@@ -96,10 +98,11 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             key={index}
                                             title={item.course.name}
                                             description={item.course.description}
-                                            image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                            image={item.course.image}
                                             rating={item.course.overall_rating}
                                             platform={item.course.platform}
                                             price={item.course.price}
+                                            id={item.course.id}
                                         />
                                     )
                                 }
@@ -117,10 +120,11 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             key={index}
                                             title={item.course.name}
                                             description={item.course.description}
-                                            image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                            image={item.course.image}
                                             rating={item.course.overall_rating}
                                             platform={item.course.platform}
                                             price={item.course.price}
+                                            id={item.course.id}
                                         />
                                     )
                                 }

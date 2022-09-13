@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="Search and Profile is done">
+    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="No Course Found Removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/pageComponents/profilePageComponents/ProfileCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/profilePageComponents/ProfileCard.jsx" afterDir="false" />
     </list>
@@ -81,7 +81,7 @@
       <workItem from="1662810379423" duration="6781000" />
       <workItem from="1662823938128" duration="609000" />
       <workItem from="1662981003722" duration="11430000" />
-      <workItem from="1663073754674" duration="9014000" />
+      <workItem from="1663073754674" duration="9716000" />
     </task>
     <task id="LOCAL-00001" summary="Course card updated and Course page made">
       <created>1660230558096</created>
@@ -258,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663084521877</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="No Course Found Removed">
+      <created>1663087456235</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1663087456235</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +329,7 @@
     <MESSAGE value="npm-lock removed" />
     <MESSAGE value="ServerSidedProps enabled" />
     <MESSAGE value="Search and Profile is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search and Profile is done" />
+    <MESSAGE value="No Course Found Removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="No Course Found Removed" />
   </component>
 </project>
