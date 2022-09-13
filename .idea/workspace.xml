@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="ServerSidedProps enabled" />
+    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="ServerSidedProps enabled">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ActionChip.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ActionChip.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Action.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Action.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/pageComponents/profilePageComponents/ProfileCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/profilePageComponents/ProfileCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/profile/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/[slug].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/utility/Auth.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +85,10 @@
       <workItem from="1662482084123" duration="7146000" />
       <workItem from="1662576435499" duration="13000" />
       <workItem from="1662631074804" duration="1908000" />
-      <workItem from="1662810379423" duration="6338000" />
+      <workItem from="1662810379423" duration="6781000" />
+      <workItem from="1662823938128" duration="609000" />
+      <workItem from="1662981003722" duration="11430000" />
+      <workItem from="1663073754674" duration="7717000" />
     </task>
     <task id="LOCAL-00001" summary="Course card updated and Course page made">
       <created>1660230558096</created>

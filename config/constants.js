@@ -4,7 +4,10 @@ export const SEARCH_COURSES = `https://cosbapi.herokuapp.com/api/courses/courses
 export const COURSE_DETAILS = `https://cosbapi.herokuapp.com/api/courses/courses-detail-view/`;
 export const SIGNUP = `https://cosbapi.herokuapp.com/api/user/register/`;
 export const LOGIN = `https://cosbapi.herokuapp.com/api/user/token/`;
-export const COURSE_STATUS = `https://cosbapi.herokuapp.com/api/courses/course-status/`;
+export const COURSE_STATUS = `https://cosbapi.herokuapp.com/api/user/course-status/`;
 export const TEST_TOKEN = `https://cosbapi.herokuapp.com/api/courses/test-token/`;
 export const RATE_COURSE = `https://cosbapi.herokuapp.com/api/courses/rate-course/`;
 export const REVIEWS = `https://cosbapi.herokuapp.com/api/courses/reviews/`;
+export const SEARCH_USER = `https://cosbapi.herokuapp.com/api/user/cosb-id/`;
+export const USER_PROFILE = `https://cosbapi.herokuapp.com/api/user/profile-view/`;
+export const AVATAR_URL = `https://ui-avatars.com/api/?background=random&name=`;

@@ -2,10 +2,10 @@ import {motion} from 'framer-motion'
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import SpeedIcon from '@mui/icons-material/Speed';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
-import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import Image from 'next/image'
 import {AddToListChip, QuickViewChip} from '../../ActionChip';
-import {Rating} from "@mui/material";
+import {Rating, Snackbar} from "@mui/material";
 import BookmarkIcon from "../../BookmarkIcon";
 import cosb from '../../../public/cosb.jpeg'
 import Link from "next/link";
@@ -17,9 +17,11 @@ import {useState} from "react";
 import axios from "axios";
 import {COURSE_STATUS} from "../../../config/constants";
 import {getToken} from "../../../utility/Auth";
+import {RequestHeaders} from "../../../utility/Auth";
 
 const Card = ({ title, description, image, rating, platform, price, id, isLogged }) => {
     const [status, setStatus] = useState('');
+    const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
 
     const handleChange = async (event) => {
@@ -28,7 +30,17 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
             id,
             status: event.target.value,
             token: getToken(),
+        },
+            {
+                headers: RequestHeaders
+            }).then(res => {
+            if (res.data.status === 1) {
+                setIsSnackbarOpen(true);
+            }
         })
+            .catch(err => {
+                console.log(err);
+            })
     };
 
   return (
@@ -93,7 +105,7 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
                 <span className={'ml-1 text-sm text-gray-600'}>{'Self Paced'}</span>
             </div>
             <div className={`${isLogged ? 'border-b-1' : ''} p-2 flex`}>
-                <AttachMoneyOutlinedIcon
+                <CurrencyRupeeIcon
                     fontSize={'small'}
                     sx={{
                         color: 'gray',
@@ -120,6 +132,14 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
                         <MenuItem value={'Bought'}>Bought</MenuItem>
                     </Select>
                 </FormControl>
+                <Snackbar
+                    open={isSnackbarOpen}
+                    autoHideDuration={6000}
+                    onClose={() => setIsSnackbarOpen(false)}
+                    message={'Status Updated Successfully'}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                />
+
             </div>}
         </div>
 

@@ -1,4 +1,4 @@
-import {TEST_TOKEN} from "../config/constants";
+import {SEARCH_USER, TEST_TOKEN} from "../config/constants";
 import axios from "axios";
 
 const ISSERVER = typeof window === "undefined";
@@ -62,3 +62,13 @@ export const getToken = () => {
         return localStorage.getItem('token');
     }
 }
+
+export const searchUser = (username) => new Promise((resolve, reject) => {
+    axios.post(SEARCH_USER, {username: username})
+        .then(res => {
+            resolve(res.data)
+        })
+        .catch(err => {
+            reject(err)
+        })
+})
