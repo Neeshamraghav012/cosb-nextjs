@@ -67,9 +67,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                             loading ? <div className={'flex justify-center items-center'}><CircularProgress/></div> :
                                 data.length === 0 ? <div className={'flex justify-center items-center'}>No Course Found</div> :
                                 data.map((item, index) => {
-                                    let found = false;
                                     if(item.status === 'Doing'){
-                                        found = true;
                                         return (
                                             <Card
                                                 key={index}
@@ -82,11 +80,6 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             />
                                         )
                                     }
-                                    if(!found){
-                                        return (
-                                            <div className={'flex justify-center items-center'}>No Course Found</div>
-                                        )
-                                    }
                                 })
 
                         }
@@ -97,9 +90,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                             loading ? <div className={'flex justify-center items-center'}><CircularProgress/></div> :
                                 data.length === 0 ? <div className={'flex justify-center items-center'}>No Course Found</div> :
                                 data.map((item, index) => {
-                                let found = false;
                                 if(item.status === 'Done'){
-                                    found = true;
                                     return (
                                         <Card
                                             key={index}
@@ -110,11 +101,6 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             platform={item.course.platform}
                                             price={item.course.price}
                                         />
-                                    )
-                                }
-                                if(!found){
-                                    return (
-                                        <div className={'flex justify-center items-center'}>No Course Found</div>
                                     )
                                 }
                             })
@@ -125,9 +111,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                             loading ? <div className={'flex justify-center items-center'}><CircularProgress/></div> :
                                 data.length === 0 ? <div className={'flex justify-center items-center'}>No Course Found</div> :
                                 data.map((item, index) => {
-                                let found = false;
                                 if(item.status === 'Bought'){
-                                    found = true;
                                     return (
                                         <Card
                                             key={index}
@@ -138,11 +122,6 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             platform={item.course.platform}
                                             price={item.course.price}
                                         />
-                                    )
-                                }
-                                if(!found){
-                                    return (
-                                        <div className={'flex justify-center items-center'}>No Course Found</div>
                                     )
                                 }
                             })

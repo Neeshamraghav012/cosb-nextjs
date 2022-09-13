@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="ServerSidedProps enabled">
+    <list default="true" id="349f7b3b-2687-4da1-9176-578a9ffbc8ec" name="Changes" comment="Search and Profile is done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ActionChip.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ActionChip.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Action.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Action.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/homePageComponents/Card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/pageComponents/profilePageComponents/ProfileCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/pageComponents/profilePageComponents/ProfileCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/[slug].jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/utility/Auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,19 +28,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/himanshu/portfolio/cosb-next/pages&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/himanshu/portfolio/cosb-next/pages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pages" />
@@ -88,7 +81,7 @@
       <workItem from="1662810379423" duration="6781000" />
       <workItem from="1662823938128" duration="609000" />
       <workItem from="1662981003722" duration="11430000" />
-      <workItem from="1663073754674" duration="7717000" />
+      <workItem from="1663073754674" duration="9014000" />
     </task>
     <task id="LOCAL-00001" summary="Course card updated and Course page made">
       <created>1660230558096</created>
@@ -258,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662822325576</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Search and Profile is done">
+      <created>1663084521877</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1663084521877</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +321,7 @@
     <MESSAGE value="Course page optimized for SEO" />
     <MESSAGE value="npm-lock removed" />
     <MESSAGE value="ServerSidedProps enabled" />
-    <option name="LAST_COMMIT_MESSAGE" value="ServerSidedProps enabled" />
+    <MESSAGE value="Search and Profile is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search and Profile is done" />
   </component>
 </project>
