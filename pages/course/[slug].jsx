@@ -19,29 +19,10 @@ import Footer from "../../components/Footer";
 import {ALL_COURSES, COURSE_DETAILS} from "../../config/constants";
 import {IdContext} from "../../context/IdContext";
 import {NextSeo} from "next-seo";
+import Link from "next/link";
+import {isLoggedin} from "../../utility/Auth";
 
 
-// export const getStaticPaths = async () => {
-//     const res = await axios.get(ALL_COURSES);
-//     const paths = res.data.map(course => ({
-//         params: {
-//             slug: course.id.toString(),
-//         },
-//     }));
-//     return {
-//         paths,
-//         fallback: false,
-//     };
-// }
-//
-// export const getStaticProps = async ({params}) => {
-//     const res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
-//     return {
-//         props: {
-//             course: res.data,
-//         },
-//     };
-// }
 
 export const getServerSideProps = async ({params}) => {
     let res = await axios.get(`${COURSE_DETAILS}${params.slug}`);
@@ -53,6 +34,7 @@ export const getServerSideProps = async ({params}) => {
 }
 
 export default function CoursePage({course}) {
+
     const router = useRouter();
     const { slug } = router.query;
     const [title, setTitle] = useState("");
@@ -66,6 +48,8 @@ export default function CoursePage({course}) {
     const [link, setLink] = useState("");
     const [desc, setDesc] = useState("");
     const [id, setId] = useState("");
+    const [isLogged, setIsLogged] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         setTitle(course.name);
@@ -81,24 +65,16 @@ export default function CoursePage({course}) {
         setId(course.id);
     }, [course]);
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         if(slug)
-    //             await axios.get(`https://cosbapi.herokuapp.com/api/courses/courses-detail-view/${slug}`)
-    //                 .then(res => {
-    //                     setTitle(res.data.name);
-    //                     setPrice(res.data.price);
-    //                     setPlatform(res.data.platform);
-    //                     setLanguage(res.data.language);
-    //                     setCertificate(res.data.certificate);
-    //                     setImage(res.data.image);
-    //                     setRating(res.data.overall_rating);
-    //                     setLink(res.data.link);
-    //                     setLoading(false);
-    //                 })
-    //     }
-    //     fetchData();
-    // }, [slug])
+
+    useEffect(() => {
+        isLoggedin().then((res) => {
+            setIsLogged(res);
+            setIsLoaded(true);
+        });
+    }, [isLoaded]);
+
+
+    console.log("Is it: ", isLogged);
 
 
     return (
@@ -153,9 +129,6 @@ export default function CoursePage({course}) {
                  {/*This is for Smaller Screens*/}
                 <div className={'flex md:hidden flex-col'}>
 
-                    
-                    
-
                     <IdContext.Provider value={slug}>
                         <TitleCardMobile
                         title={title}
@@ -176,6 +149,8 @@ export default function CoursePage({course}) {
                     />
                     {/*<RelatedCoursesMobile/>*/}
                     <ReviewsMobile id={slug}/>
+                    
+                    
                     {/*<BottomButton/>*/}
                 </div>
 
