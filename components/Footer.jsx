@@ -20,10 +20,10 @@ const Footer = ({className}) => {
 
                         </a>
 
-                        <a href={'/aboutus'}><span
+                        {/*<a href={'/aboutus'}><span
                                     className="self-center text-sm whitespace-nowrap dark:text-white">About Us  </span></a>
 
-                        <br />
+                        <br />*/}
                         <a href={'/contactus'}><span
                                     className="self-center text-sm whitespace-nowrap dark:text-white">Contact Us  </span></a>
                     </div>
