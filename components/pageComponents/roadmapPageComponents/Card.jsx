@@ -46,17 +46,7 @@ const Card = ({ title, description, image, user, views, readingTime, publishedTi
                 </div>
 
             </div>
-            <div className={'flex flex-col mt-5 text-center'}>
-                
-                <a>
-                    <Link href={`/diary/${id}`}>
-                    
-                            <SanitizedHTML html={ truncate(description) } />
 
-                    </Link>
-                </a>
-
-            </div>
         </div>
 
         <div className={'flex flex-col md:w-1/5 md:ml-5 mt-5 md:mt-0 justify-center'}>

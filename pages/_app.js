@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
 
         <Navbar/>
         <Component {...pageProps} />
-        <Footer className={'mt-20'}/>
+        {/*<Footer className={'mt-20'}/>*/}
     </>
   )
 

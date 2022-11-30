@@ -96,7 +96,7 @@ const RoadMap = ({roadmap}) => {
 
                     </div>
 
-                    <DescriptionCard className={'mt-5 w-1/2 mx-auto'} desc = {desc} />
+                    <DescriptionCard className={'mt-5 mx-auto'} desc = {desc} />
 
 
                 </div>
