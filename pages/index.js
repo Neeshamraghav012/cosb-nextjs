@@ -26,7 +26,7 @@ export default function Home() {
 
         localStorage.setItem('token', token);
         localStorage.setItem('username', username);
-        history.pushState({}, null, 'http://localhost:3000/');
+        history.pushState({}, null, 'https:/cosb.online/');
 
 
     }
