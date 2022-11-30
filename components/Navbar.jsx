@@ -25,6 +25,8 @@ const Navbar = ()   => {
         });
     }, [isLoaded]);
 
+    // {getUsername()}
+
     return (
         <div className={'flex justify-between items-center py-5 md:px-10 px-2 bg-black text-white'}>
             <div className={'flex items-center'}>

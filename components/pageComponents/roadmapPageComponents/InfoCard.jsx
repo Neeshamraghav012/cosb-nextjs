@@ -46,36 +46,14 @@ export const InfoCard = ({className, image, platform, price, language, certifica
                     />
                     <span className={'ml-2'}>{certificate}</span>
                 </div>
-                {/*<div className={'border-b-1 flex py-2'}>
-                    <AccessTimeOutlinedIcon
-                        fontSize={'medium'}
-                    />
-                    <span className={'ml-2'}>{time}</span>
-    </div>*/}
+
                 <div className={'border-b-1 flex py-2'}>
                     <CalendarTodayOutlinedIcon
                         fontSize={'medium'}
                     />
                     <span className={'ml-2'}>Self Paced</span>
                 </div>
-                {/*<div className={'border-b-1 flex py-2'}>
-                    <AssessmentOutlinedIcon
-                        fontSize={'medium'}
-                    />
-                    <span className={'ml-2'}>{level}</span>
-</div>*/}
-                {/*<div className={'border-b-1 flex py-2'}>
-                    <ClosedCaptionOffOutlinedIcon
-                        fontSize={'medium'}
-                    />
-                    <span className={'ml-2'}>{cc}</span>
-</div>*/}
-                {/*<div className={'flex py-2'}>
-                    <ShareOutlinedIcon
-                        fontSize={'medium'}
-                    />
-                    <span className={'ml-2'}>Share this Course</span>
-</div>*/}
+
             </div>
 
         </div>

@@ -21,6 +21,8 @@ import {IdContext} from "../../context/IdContext";
 import {NextSeo} from "next-seo";
 import Link from "next/link";
 import {isLoggedin} from "../../utility/Auth";
+import Head from 'next/head'
+
 
 
 
@@ -74,13 +76,17 @@ export default function CoursePage({course}) {
     }, [isLoaded]);
 
 
-    console.log("Is it: ", isLogged);
-
-
     return (
         <>
+
+            <Head>
+              <title>{title} - cosb</title>
+              <meta name="description" content={desc} />
+              <link rel="icon" href="/favicon.ico" />
+            </Head>
+
             <NextSeo
-                title={`cosb - ${course.name}`}
+                title={`${course.name} | cosb`}
                 description={course.description}
                 openGraph={{
                     title: course.name,
@@ -114,7 +120,7 @@ export default function CoursePage({course}) {
                     <TitleCard title={title} platform={platform} rating={rating} />
                     <DescriptionCard className={'mt-5'} desc = {desc} />
                 </div>
-                <div className={'hidden md:flex flex-col w-1/3 ml-5'}>
+                <div className={'hidden md:flex flex-col w-1/3 ml-5 mb-5'}>
                     <InfoCard
                         image={image}
                         platform={platform}

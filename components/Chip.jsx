@@ -1,10 +1,11 @@
 const Chip = ({ label, onClick, className }) => {
     return (
-        <div className={"rounded-full text-xs md:text-sm px-4 py-2 md:py-2 border-2 border-slate-500 text-slate-500 hover:text-black hover:border-black duration-500 cursor-pointer "
+        <div className={"rounded-full text-xs md:text-sm px-4 py-2 md:py-2 border-2 border-black-1000 text-black-1000 hover:text-black hover:border-black duration-500 cursor-pointer "
             + className} onClick={onClick}>
             {label}
         </div>
     );
 }
 
+// className={"rounded-full text-xs md:text-sm px-4 py-2 md:py-2 border-2 border-slate-500 text-slate-500 hover:text-black hover:border-black duration-500 cursor-pointer "
 export default Chip;

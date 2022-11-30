@@ -9,6 +9,8 @@ export const RequestHeaders = {
     'Authorization': `Bearer ${!ISSERVER ? localStorage.getItem('token') : null}`
 }
 
+// axios.post(TEST_TOKEN, {token: token})
+
 export const isLoggedin = () => new Promise((resolve, reject) => {
     if(!ISSERVER){
         const token = localStorage.getItem('token');
