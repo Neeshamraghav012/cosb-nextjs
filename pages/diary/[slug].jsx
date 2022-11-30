@@ -54,25 +54,28 @@ const RoadMap = ({roadmap}) => {
         <div>
             <Head>
                 <title>{title} - cosb</title>
+                <meta name="description" content={title} />
+              <link rel="icon" href="/favicon.ico" />
+
             </Head>
 
 
             <NextSeo
-                title={`${title} | cosb`}
-                description={desc}
+                title={`${roadmap.title} | cosb`}
+                description={roadmap.desc}
                 openGraph={{
-                    title: title,
-                    description: desc,
+                    title: roadmap.title,
+                    description: roadmap.desc,
                     images: [
                         {
-                            url: image,
+                            url: roadmap.image,
                             width: 800,
                             height: 600,
                             alt: 'Og Image Alt',
 
                         },
-                        { url: image },
-                        { url: image },
+                        { url: roadmap.image },
+                        { url: roadmap.image },
                     ],
                 }}/>
 
