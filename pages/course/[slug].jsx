@@ -163,5 +163,7 @@ export default function CoursePage({course}) {
             </div>
         </div>
     )}
+
+        <Footer className={'mt-20'}/>
         </>)
 }

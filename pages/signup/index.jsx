@@ -8,6 +8,8 @@ import AlertTitle from "@mui/material/AlertTitle";
 import Alert from "@mui/material/Alert";
 import {ButtonLoading} from "../../components/LoadingComponents";
 import GoogleButton from 'react-google-button';
+import Footer from "../../components/Footer";
+
 
 const Signup = () => {
     const [username, setUsername] = useState("");
@@ -85,6 +87,7 @@ const Signup = () => {
     }
 
     return (
+        <>
         <div>
             <Head>
                 <title>Sign up - cosb</title>
@@ -141,6 +144,10 @@ const Signup = () => {
             </motion.div>
 
         </div>
+
+        <Footer className={'mt-20'}/>
+
+        </>
     );
 }
 

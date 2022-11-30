@@ -8,6 +8,8 @@ import axios from "axios";
 import {ALL_ROADMAPS, SEARCH_roadmapS} from "../../config/constants";
 import {isLoggedin} from "../../utility/Auth";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Footer from "../../components/Footer";
+
 
 export default function Home() {
     const [isLogged, setIsLogged] = useState(false);
@@ -37,6 +39,7 @@ export default function Home() {
     }, [])
 
     return  (
+        <>
         <div>
           <Head>
             <title>Find best learning resources on the Internet! - cosb</title>
@@ -77,6 +80,10 @@ export default function Home() {
 
 
         </div>
+
+        <Footer className={'mt-20'}/>
+
+        </>
 
   )
 }

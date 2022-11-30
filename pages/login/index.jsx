@@ -8,6 +8,7 @@ import {isLoggedin} from "../../utility/Auth";
 import Head from "next/head";
 import {ButtonLoading} from "../../components/LoadingComponents";
 import GoogleButton from 'react-google-button';
+import Footer from "../../components/Footer";
 
 
 const Login = () => {
@@ -81,6 +82,8 @@ const Login = () => {
     
 
     return (
+
+        <>
         <div>
             <Head>
                 <title>Login - cosb</title>
@@ -127,6 +130,10 @@ const Login = () => {
             </motion.div>
 
         </div>
+
+            <Footer className={'mt-20'}/>
+
+        </>
     )
 }
 
