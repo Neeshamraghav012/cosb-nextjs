@@ -1,13 +1,19 @@
-export const ALL_COURSES = `https://cosbapi.herokuapp.com/api/courses/all-courses-view/`;
-export const HOME_COURSES = `https://cosbapi.herokuapp.com/api/courses/courses-list-view/`;
-export const SEARCH_COURSES = `https://cosbapi.herokuapp.com/api/courses/courses-search-view/`;
-export const COURSE_DETAILS = `https://cosbapi.herokuapp.com/api/courses/courses-detail-view/`;
-export const SIGNUP = `https://cosbapi.herokuapp.com/api/user/register/`;
-export const LOGIN = `https://cosbapi.herokuapp.com/api/user/token/`;
-export const COURSE_STATUS = `https://cosbapi.herokuapp.com/api/user/course-status/`;
-export const TEST_TOKEN = `https://cosbapi.herokuapp.com/api/courses/test-token/`;
-export const RATE_COURSE = `https://cosbapi.herokuapp.com/api/courses/rate-course/`;
-export const REVIEWS = `https://cosbapi.herokuapp.com/api/courses/reviews/`;
-export const SEARCH_USER = `https://cosbapi.herokuapp.com/api/user/cosb-id/`;
-export const USER_PROFILE = `https://cosbapi.herokuapp.com/api/user/profile-view/`;
-export const AVATAR_URL = `https://ui-avatars.com/api/?background=random&name=`;
+
+
+
+const BACKEND_URL = 'https://cosbapi.herokuapp.com/'
+
+export const ALL_COURSES = `${BACKEND_URL}api/courses/all-courses-view/`;
+export const HOME_COURSES = `${BACKEND_URL}api/courses/courses-list-view/`;
+export const SEARCH_COURSES = `${BACKEND_URL}api/courses/courses-search-view/`;
+export const COURSE_DETAILS = `${BACKEND_URL}api/courses/courses-detail-view/`;
+export const SIGNUP = `${BACKEND_URL}api/user/register/`;
+export const LOGIN = `${BACKEND_URL}api/user/token/`;
+export const COURSE_STATUS = `${BACKEND_URL}api/courses/course-status/`;
+export const RATE_COURSE = `${BACKEND_URL}api/courses/rate-course/`;
+export const REVIEWS = `${BACKEND_URL}api/courses/reviews/`;
+export const TEST_TOKEN = `${BACKEND_URL}api/courses/test-token/`;
+export const ALL_ROADMAPS = `${BACKEND_URL}api/roadmaps/roadmap-list-view/`
+export const ROADMAP_DETAILS = `${BACKEND_URL}api/roadmaps/roadmap-detail-view/`
+
+

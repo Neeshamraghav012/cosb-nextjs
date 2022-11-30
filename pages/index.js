@@ -8,6 +8,8 @@ import axios from "axios";
 import {HOME_COURSES, SEARCH_COURSES} from "../config/constants";
 import {isLoggedin} from "../utility/Auth";
 import InfiniteScroll from "react-infinite-scroll-component";
+import {useRouter} from "next/router";
+import Link from "next/link";
 
 export default function Home() {
     const [isLogged, setIsLogged] = useState(false);
@@ -16,11 +18,25 @@ export default function Home() {
     const [hasMore, setHasMore] = useState(true);
     const [count, setCount] = useState(0);
 
+
+    const router = useRouter();
+    const {token, username} = router.query;
+
+    if (token && username) {
+
+        localStorage.setItem('token', token);
+        localStorage.setItem('username', username);
+        history.pushState({}, null, 'http://localhost:3000/');
+
+
+    }
+
     useEffect(() => {
         isLoggedin().then(res => {
             setIsLogged(res)
         })
     }, [])
+
 
     useEffect(() => {
         async function fetchData() {
@@ -33,8 +49,11 @@ export default function Home() {
                 })
 
         }
+
+        console.log(courseData)
     fetchData().then(() => setLoading(false));
     }, [])
+
 
     const fetchMoreData = () => {
         setCount(count + 5);
@@ -50,6 +69,9 @@ export default function Home() {
                 setCourseData(courseData.concat(res.data));
             })
     }
+
+    
+
 
     const onSearchChange = async (e) => {
         const searchValue = e.target ? e.target.value : e.current.value;
@@ -68,31 +90,64 @@ export default function Home() {
 
     }
 
+
     return  (
         <div>
           <Head>
-            <title>cosb - Find best learning resources on the Internet!</title>
+            <title>Find best learning resources on the Internet! - cosb</title>
             <meta name="description" content="cosb" />
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
+          {/*<div role="alert" className="rounded-xl border border-gray-100 p-4 shadow-xl text-center">
+            <div className="flex gap-4">
+
+                <span
+                  className="inline-flex items-center justify-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700"
+                >
+
+
+                  <p className="whitespace-nowrap text-sm">New</p>
+                </span>
+
+
+              <div className="flex-1">
+
+
+                <div className="mt-4 flex gap-2 mx-auto">
+                  <Link
+                    href={'/diary'}
+                    className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-black"
+                  >
+                    <span className="text-sm"> Diary </span>
+
+                  </Link>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>*/}
+
+
           <Action onSearchChange={onSearchChange}/>
+
 
 
             {loading ? (
                 <div className={'flex justify-center  w-full h-screen'}>
                     <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
-                    {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
+                    
                 </div>
             ) : (
                 <InfiniteScroll
-                    dataLength={courseData.length}
+                    dataLength='1'
                     next={fetchMoreData}
                     hasMore={hasMore}
                     loader={
                         <div className={'flex justify-center  w-full h-screen'}>
                             <Box alignItems="center" justifyContent="center"><CircularProgress /></Box>
-                            {/*<Skeleton variant="rectangular" width={'80%'} height={200} />*/}
                         </div>
                     }
                     endMessage={
@@ -122,6 +177,7 @@ export default function Home() {
 
 
             ) }
+
 
 
         </div>

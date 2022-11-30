@@ -1,12 +1,14 @@
 import {motion} from "framer-motion";
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useCallback} from "react";
 import {LOGIN} from "../../config/constants";
 import axios from "axios";
 import {login} from "../../utility/Auth";
 import {isLoggedin} from "../../utility/Auth";
 import Head from "next/head";
 import {ButtonLoading} from "../../components/LoadingComponents";
+import GoogleButton from 'react-google-button';
+
 
 const Login = () => {
     const [isLogged, setIsLogged] = useState(false);
@@ -49,6 +51,35 @@ const Login = () => {
             });
     }
 
+
+    const openGoogleLoginPage = useCallback(() => {
+      const googleAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
+      const redirectUri = 'api/v1/auth/login/google/';
+
+      const scope = [
+        'https://www.googleapis.com/auth/userinfo.email',
+        'https://www.googleapis.com/auth/userinfo.profile'
+      ].join(' ');
+
+      const params = {
+        response_type: 'code',
+        client_id: '844679618353-fj41j1j2o7ck54bclf09ngq1h0dlm4ka.apps.googleusercontent.com',
+        redirect_uri: `https://cosbapi.herokuapp.com/${redirectUri}`,
+        prompt: 'select_account',
+        access_type: 'offline',
+        scope
+      }
+
+
+
+        const urlParams = new URLSearchParams(params).toString();
+
+        window.location = `${googleAuthUrl}?${urlParams}`;
+
+    }, []);
+
+    
+
     return (
         <div>
             <Head>
@@ -56,7 +87,7 @@ const Login = () => {
             </Head>
             <motion.div animate={{scale:[0.8,1]}} transition={{duration:0.3}} className={'flex flex-col mx-auto justify-center items-center mt-20 container py-20 lg:w-1/3 md:w-1/2 rounded-3xl shadow-2xl border-1 border-neutral-200'}>
                 <h1 className={'font-bold text-3xl'}>Log in to cosb</h1>
-                <div className={'flex flex-col mt-10'}>
+                {/*<div className={'flex flex-col mt-10'}>
                     <label className={'my-2'}>Username or Email</label>
                     <input type={'text'} className={'border-solid border-grey-300 border-1 rounded-lg p-2 outline-black'} onChange={(event) => {
                         setUsername(event.target.value);
@@ -71,23 +102,32 @@ const Login = () => {
                     <span className={'cursor-pointer hover:underline text-left'}>Forgot Password?</span>
                 </motion.div>
 
-                <span className={'mt-1 text-red-500'}>{error}</span>
+                <span className={'mt-1 text-red-500'}>{error}</span>*/}
 
-                <motion.button whileHover={{scale:1.1}} className={'py-2 w-24 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={() => {
+                {/*<motion.button whileHover={{scale:1.1}} className={'py-2 w-24 bg-gray-800 hover:bg-black rounded-lg text-white mt-5'} onClick={() => {
                     handleSubmit();
-                }}>{isLoaded ? 'Log in' : <ButtonLoading/>}</motion.button>
+                }}>{isLoaded ? 'Log in' : <ButtonLoading/>}</motion.button>*/}
 
-                <div className={'flex text-left  mt-5 '}>
+                <GoogleButton
+                  onClick={openGoogleLoginPage}
+                  label="Sign in with Google"
+                  
+                />
+
+                {/*<div className={'flex text-left  mt-5 '}>
                     <span className={'text-gray-700'}>New to cosb?</span>
                     <Link href={'/signup'}>
                         <span className={'cursor-pointer font-semibold hover:underline ml-4'}>Sign up now</span>
                     </Link>
-                </div>
+
+   
+
+            </div>*/}
 
             </motion.div>
 
         </div>
-    );
+    )
 }
 
 export default Login;

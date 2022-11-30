@@ -6,12 +6,13 @@ import {Modal, Rating, ThemeProvider} from "@mui/material";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {useState} from "react";
 import theme from '../../../../config/theme';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import {isLoggedin} from "../../../../utility/Auth";
+import {useEffect, useState} from "react";
 
 
 const TitleCardMobile = ({image, title, platform, rating, link, desc}) => {
@@ -19,6 +20,7 @@ const TitleCardMobile = ({image, title, platform, rating, link, desc}) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [isLogged, setIsLogged] = useState(false);
     const style = {
         position: 'absolute',
         top: '50%',
@@ -30,6 +32,14 @@ const TitleCardMobile = ({image, title, platform, rating, link, desc}) => {
         boxShadow: 24,
         p: 1.3,
     };
+
+
+    useEffect(() => {
+        isLoggedin().then((res) => {
+            setIsLogged(res);
+
+        });
+    }, []);
 
 
     return (
@@ -123,7 +133,9 @@ const TitleCardMobile = ({image, title, platform, rating, link, desc}) => {
                 <Link href={link}>
                     <a><GotoClass/></a>
                 </Link>
-                <WriteReviewChip className={'mx-4 py-3 mt-2'}/>
+                
+
+                {isLogged ? <WriteReviewChip className={'mx-4 py-3 mt-2'}/> : <Link href={'/login'}><span className={'cursor-pointer font-semibold hover:underline mr-4 text-center'}>login to post a review</span></Link>}
             </div>
         </div>
     )

@@ -2,7 +2,11 @@ import {motion} from 'framer-motion'
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import SpeedIcon from '@mui/icons-material/Speed';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
+import CurrencyRupeeOutlinedIcon from '@mui/icons-material/CurrencyRupeeOutlined';
+
 import Image from 'next/image'
 import {AddToListChip, QuickViewChip} from '../../ActionChip';
 import {Rating, Snackbar} from "@mui/material";
@@ -105,7 +109,9 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
                 <span className={'ml-1 text-sm text-gray-600'}>{'Self Paced'}</span>
             </div>
             <div className={`${isLogged ? 'border-b-1' : ''} p-2 flex`}>
-                <CurrencyRupeeIcon
+
+                <CurrencyRupeeOutlinedIcon
+
                     fontSize={'small'}
                     sx={{
                         color: 'gray',

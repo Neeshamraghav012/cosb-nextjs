@@ -2,6 +2,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import Link from "next/link";
+
 
 const Footer = ({className}) => {
     return (
@@ -14,7 +16,16 @@ const Footer = ({className}) => {
                             {/*     alt="FlowBite Logo"/>*/}
                                 <span
                                     className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">cosb</span>
+
+
                         </a>
+
+                        {/*<a href={'/aboutus'}><span
+                                    className="self-center text-sm whitespace-nowrap dark:text-white">About Us  </span></a>
+
+                        <br />*/}
+                        <a href={'/contactus'}><span
+                                    className="self-center text-sm whitespace-nowrap dark:text-white">Contact Us  </span></a>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         {/*<div>*/}
