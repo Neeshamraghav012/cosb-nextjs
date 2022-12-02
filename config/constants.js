@@ -1,6 +1,6 @@
 
 
-const BACKEND_URL = 'https://cosbapi.herokuapp.com/'
+const BACKEND_URL = 'https://neesham.pythonanywhere.com/'
 
 export const ALL_COURSES = `${BACKEND_URL}api/courses/all-courses-view/`;
 export const HOME_COURSES = `${BACKEND_URL}api/courses/courses-list-view/`;
