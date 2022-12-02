@@ -65,7 +65,7 @@ const Login = () => {
       const params = {
         response_type: 'code',
         client_id: '844679618353-fj41j1j2o7ck54bclf09ngq1h0dlm4ka.apps.googleusercontent.com',
-        redirect_uri: `https://cosbapi.herokuapp.com/${redirectUri}`,
+        redirect_uri: `https://neesham.pythonanywhere.com/${redirectUri}`,
         prompt: 'select_account',
         access_type: 'offline',
         scope
