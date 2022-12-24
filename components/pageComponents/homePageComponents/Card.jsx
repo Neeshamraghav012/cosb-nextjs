@@ -25,6 +25,7 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
 
     const handleChange = async (event) => {
         setStatus(event.target.value);
+
         await axios.post(COURSE_STATUS, {
             id,
             status: event.target.value,
