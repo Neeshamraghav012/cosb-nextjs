@@ -9,7 +9,7 @@ import {useEffect, useState, useContext} from "react";
 import {Rating} from "@mui/material";
 import {IdContext} from "../context/IdContext";
 import axios from "axios";
-import {RATE_COURSE} from "../config/constants";
+import {RATE_COURSE, AVATAR_URL} from "../config/constants";
 import {getToken, RequestHeaders} from "../utility/Auth";
 import {ButtonLoading} from "./LoadingComponents";
 import Alert from "@mui/material/Alert";
@@ -214,6 +214,18 @@ export const EditProfileChip = ({className}) => {
     return (
         <div className={'flex border-1 border-neutral-200 py-1 px-2 rounded-md cursor-pointer ' + className}>
             <span className={'text-sm font-bold mx-auto'}>Edit profile</span>
+        </div>
+    )
+}
+
+export const SearchedUserChip = ({className, user, callback}) => {
+    return (
+        <div className={'flex z-50 w-full items-center border-1 bg-white border-neutral-200 py-1 px-2 rounded-md cursor-pointer ' + className} onClick={() => callback()}>
+            <img src={AVATAR_URL + user.username} alt={user.name} className={'rounded-full w-8 h-8'}/>
+            <div className={'flex flex-col ml-2'}>
+                <span className={'text-sm text-black font-bold'}>{user.username}</span>
+                {/*<span className={'text-xs text-neutral-500'}>{user.email ? user.email : 'No Email'}</span>*/}
+            </div>
         </div>
     )
 }

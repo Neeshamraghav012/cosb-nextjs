@@ -9,6 +9,7 @@ import Head from "next/head";
 import {ButtonLoading} from "../../components/LoadingComponents";
 import Image from "next/image";
 
+import Footer from "../../components/Footer";
 
 
 
@@ -190,6 +191,7 @@ const AboutUs = () => {
               </div>
             </section>
 
+            <Footer className={'mt-20'}/>
 
 
         </div>

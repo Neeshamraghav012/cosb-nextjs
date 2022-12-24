@@ -14,4 +14,6 @@ export const REVIEWS = `${BACKEND_URL}api/courses/reviews/`;
 export const TEST_TOKEN = `${BACKEND_URL}api/courses/test-token/`;
 export const ALL_ROADMAPS = `${BACKEND_URL}api/roadmaps/roadmap-list-view/`
 export const ROADMAP_DETAILS = `${BACKEND_URL}api/roadmaps/roadmap-detail-view/`
-
+export const SEARCH_USER = `${BACKEND_URL}api/user/cosb-id/`;
+export const AVATAR_URL = `https://ui-avatars.com/api/?background=random&name=`;
+export const USER_PROFILE = `${BACKEND_URL}api/user/profile-view/`;

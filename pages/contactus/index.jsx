@@ -7,6 +7,8 @@ import {login} from "../../utility/Auth";
 import {isLoggedin} from "../../utility/Auth";
 import Head from "next/head";
 import {ButtonLoading} from "../../components/LoadingComponents";
+import Footer from "../../components/Footer";
+
 
 const ContactUs = () => {
 
@@ -38,6 +40,9 @@ const ContactUs = () => {
                 </div>
 
             </motion.div>
+
+            <Footer className={'mt-20'}/>
+            
 
         </div>
     );

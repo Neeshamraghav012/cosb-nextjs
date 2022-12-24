@@ -24,8 +24,11 @@ const Footer = ({className}) => {
                                     className="self-center text-sm whitespace-nowrap dark:text-white">About Us  </span></a>
 
                         <br />*/}
-                        <a href={'/contactus'}><span
-                                    className="self-center text-sm whitespace-nowrap dark:text-white">Contact Us  </span></a>
+                        {/*<a href={'/contactus'}><span
+                                    className="self-center text-sm whitespace-nowrap dark:text-white">Contact Us  </span></a>*/}
+
+
+                        <span><Link href={'/contactus'} className={'text-gray-600 hover:underline dark:text-gray-400'}>Contact Us</Link> <Link href={'/aboutus'} className={'text-sm'}>About Us</Link></span>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         {/*<div>*/}
