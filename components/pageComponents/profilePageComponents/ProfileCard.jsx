@@ -12,6 +12,9 @@ import Card from "../homePageComponents/Card";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SchoolIcon from '@mui/icons-material/School';
 import PaidIcon from '@mui/icons-material/Paid';
+import {NextSeo} from "next-seo";
+import cosb from '../../../public/cosb.jpeg'
+
 
 const ProfileCard = ({image, username, name, posts, followers, following, bio, data, loading}) => {
     const [value, setValue] = useState(1);
@@ -21,6 +24,28 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
 
 
     return (
+
+        <>
+
+        <NextSeo
+            title={`${username} | cosb`}
+            description={'Find best learning resources on the Internet!'}
+            openGraph={{
+                title: username,
+                description: 'Find best learning resources on the Internet!',
+                images: [
+                    {
+                        url: image,
+                        width: 800,
+                        height: 600,
+                        alt: 'User Image Alt',
+
+                    },
+                    { url: image },
+                    { url: image },
+                ],
+            }}/>
+
         <div className={'flex flex-col'}>
             <div className={'flex mt-5'}>
                 <div className={'flex  w-1/3 md:items-center  md:mt-0 md:py-20 px-5'}>
@@ -75,7 +100,8 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                                 key={index}
                                                 title={item.course.name}
                                                 description={item.course.description}
-                                                image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                                // image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                                image={cosb}
                                                 rating={item.course.overall_rating}
                                                 platform={item.course.platform}
                                                 price={item.course.price}
@@ -105,7 +131,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             key={index}
                                             title={item.course.name}
                                             description={item.course.description}
-                                            image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                            image={cosb}
                                             rating={item.course.overall_rating}
                                             platform={item.course.platform}
                                             price={item.course.price}
@@ -134,6 +160,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                             title={item.course.name}
                                             description={item.course.description}
                                             image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                            
                                             rating={item.course.overall_rating}
                                             platform={item.course.platform}
                                             price={item.course.price}
@@ -151,6 +178,7 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                 </TabContext>
             </ThemeProvider>
         </div>
+        </>
 
     )
 }
