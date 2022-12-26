@@ -33,11 +33,14 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
         })
     };
 
+    console.log(image);
+
   return (
     <motion.div whileHover={{scale: 1.03}} className="pl-10 border-neutral-200 border-1 pr-5 py-10 rounded-3xl shadow-md container md:w-2/3 flex md:flex-row flex-col mx-auto my-2">
         <div className={'flex flex-col md:w-4/5 md:border-r-1 pr-4'}>
             <div className={'flex'}>
                 <div className="md:w-1/6 w-1/2 flex flex-col flex-wrap overflow-hidden">
+
                     <Image className={'w-full rounded-xl'} src={image ? image : cosb} alt={title} height={'70'} width={'50'} />
                 </div>
                 <div className="ml-4 w-5/6">

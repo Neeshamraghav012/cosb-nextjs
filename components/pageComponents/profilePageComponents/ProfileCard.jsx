@@ -94,25 +94,26 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                 data.map((item, index) => {
                                     let found = false;
                                     if(item.status === 'Doing'){
-                                        found = true;
+                                        // found = true;
                                         return (
                                             <Card
                                                 key={index}
                                                 title={item.course.name}
                                                 description={item.course.description}
                                                 // image={item.course.image ? item.course.image : '/images/cosb.jpg'}
-                                                image={cosb}
+                                                image={item.course.image}
                                                 rating={item.course.overall_rating}
                                                 platform={item.course.platform}
                                                 price={item.course.price}
+                                                id={item.course.id}
                                             />
                                         )
                                     }
-                                    if(!found){
+                                    /*if(!found){
                                         return (
                                             <div className={'flex justify-center items-center'}>No Course Found</div>
                                         )
-                                    }
+                                    }*/
                                 })
 
                         }
@@ -125,24 +126,28 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                 data.map((item, index) => {
                                 let found = false;
                                 if(item.status === 'Done'){
-                                    found = true;
+                                    // found = true;
                                     return (
                                         <Card
                                             key={index}
                                             title={item.course.name}
                                             description={item.course.description}
-                                            image={cosb}
+                                            // image={cosb}
+                                            image={item.course.image}
+
                                             rating={item.course.overall_rating}
                                             platform={item.course.platform}
                                             price={item.course.price}
+                                            id={item.course.id}
+
                                         />
                                     )
                                 }
-                                if(!found){
+                                /*if(!found){
                                     return (
                                         <div className={'flex justify-center items-center'}>No Course Found</div>
                                     )
-                                }
+                                }*/
                             })
                         }
                     </TabPanel>
@@ -153,25 +158,27 @@ const ProfileCard = ({image, username, name, posts, followers, following, bio, d
                                 data.map((item, index) => {
                                 let found = false;
                                 if(item.status === 'Bought'){
-                                    found = true;
+                                    // found = true;
                                     return (
                                         <Card
                                             key={index}
                                             title={item.course.name}
                                             description={item.course.description}
-                                            image={item.course.image ? item.course.image : '/images/cosb.jpg'}
-                                            
+                                            // image={item.course.image ? item.course.image : '/images/cosb.jpg'}
+                                            image={item.course.image}
+
+                                            id={item.course.id}
                                             rating={item.course.overall_rating}
                                             platform={item.course.platform}
                                             price={item.course.price}
                                         />
                                     )
                                 }
-                                if(!found){
+                                /*if(!found){
                                     return (
                                         <div className={'flex justify-center items-center'}>No Course Found</div>
                                     )
-                                }
+                                }*/
                             })
                         }
                     </TabPanel>
