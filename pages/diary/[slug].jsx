@@ -1,7 +1,5 @@
 
 
-
-
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import axios from "axios";
@@ -12,6 +10,7 @@ import {DescriptionCard} from "../../components/pageComponents/roadmapPageCompon
 import {CircularProgress} from "@mui/material";
 import {ROADMAP_DETAILS} from "../../config/constants";
 import {NextSeo} from "next-seo";
+import Footer from "../../components/Footer";
 
 
 export const getServerSideProps = async ({params}) => {
@@ -81,9 +80,9 @@ const RoadMap = ({roadmap}) => {
 
 
             <div className={''}>
-                <div className={'h-screen'}>
+                <div className={''}>
                      {/*This is for Bigger Screens */}
-                    <div className={'hidden md:flex flex-col'}>
+                    <div className={'md:flex flex-col'}>
 
 
                         <Card key={id}
@@ -104,6 +103,8 @@ const RoadMap = ({roadmap}) => {
 
                 </div>
             </div>
+
+            <Footer className={''} />
             
 
         </div>
