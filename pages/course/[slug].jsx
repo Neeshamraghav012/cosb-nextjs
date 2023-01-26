@@ -23,6 +23,7 @@ import Link from "next/link";
 import {isLoggedin} from "../../utility/Auth";
 import Head from 'next/head'
 import Script from 'next/script';
+import { WriteReviewChip } from "../../components/ActionChip";
 
 
 
@@ -130,6 +131,8 @@ export default function CoursePage({course}) {
                 <div className={'hidden md:flex flex-col w-2/3'}>
                     <TitleCard title={title} platform={platform} rating={rating} />
                     <DescriptionCard className={'mt-5'} desc = {desc} />
+                    <WriteReviewChip id={id} isLogged={isLogged} isLoaded={isLoaded} className = {'mt-5 text-lg h-10'}/>
+
                 </div>
                 <div className={'hidden md:flex flex-col w-1/3 ml-5 mb-5'}>
                     <InfoCard
@@ -141,6 +144,7 @@ export default function CoursePage({course}) {
                         link={link}
                     />
                 </div>
+
 
 
                  {/*This is for Smaller Screens*/}

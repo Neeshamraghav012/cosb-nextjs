@@ -56,6 +56,7 @@ export const WriteReviewChip = ({className}) => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [alert, setAlert] = useState(false);
+    const [sent, setSent] = useState("");
 
     const id = useContext(IdContext);
     const token = getToken();
@@ -63,12 +64,46 @@ export const WriteReviewChip = ({className}) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    // token = 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 
+
+    async function query(data) {
+        const response = await fetch(
+            "https://api-inference.huggingface.co/models/papluca/xlm-roberta-base-language-detection",
+            {
+                headers: { Authorization: "Bearer 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" },
+                method: "POST",
+                body: JSON.stringify(data),
+            }
+        );
+        const result = await response.json();
+        return result;
+    }
+    
+    
+
+
     const handleSubmit = async (e) => {
         if(!token) {
             setError("Please login to write a review");
             return;
         }
         setIsLoading(true);
+
+        query({"inputs": review}).then((response) => {
+            
+            const label = JSON.stringify(response[0][0]['label']);
+
+            if(label === '"en"') {
+
+            }
+            else{
+                setError("Please write in English");
+                setIsLoading(false);
+                return;
+            }
+            
+        });
+
         await axios
             .post(RATE_COURSE, {
                 token,
@@ -151,7 +186,7 @@ export const WriteReviewChip = ({className}) => {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2" className={''}>
-                        Write a Review
+                        Write a Review <p className='text-sm'>(in english)</p>
                     </Typography>
                     <Typography id="modal-modal-description" sx={{mt: 2}}>
                         <div className={'flex flex-col justify-center items-center'}>
@@ -177,6 +212,7 @@ export const WriteReviewChip = ({className}) => {
                             {error}
                         </div>
                         <div className={'flex justify-center'}>
+                            <p className={'mb-5 mt-3'}>{sent}</p>
                             <button
                                 className={'bg-gray-800 text-white rounded-lg px-4 py-1 mt-2'}
                                 onClick={() => {
