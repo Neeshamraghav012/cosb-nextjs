@@ -59,8 +59,8 @@ export const WriteReviewChip = ({className}) => {
     const [sent, setSent] = useState("");
 
     const id = useContext(IdContext);
-    const token = getToken();
-
+    const token = localStorage.getItem('token');
+    console.log(token)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -175,7 +175,7 @@ export const WriteReviewChip = ({className}) => {
                     </Alert>
                 )}
             </div>
-            <div className={"border-1 flex rounded-lg px-2 items-center justify-center cursor-pointer text-white bg-gray-800 hover:bg-black duration-300 " + className} onClick={handleOpen}>
+            <div className={"border-1 flex rounded-lg px-2 items-center justify-center cursor-pointer  text-white bg-gray-800 hover:bg-black duration-300 " + className} onClick={handleOpen}>
                 <span className="ml-1 text-sm">Write Review</span>
             </div>
             <Modal

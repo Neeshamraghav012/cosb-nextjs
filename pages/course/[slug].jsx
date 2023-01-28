@@ -22,7 +22,6 @@ import {NextSeo} from "next-seo";
 import Link from "next/link";
 import {isLoggedin} from "../../utility/Auth";
 import Head from 'next/head'
-import Script from 'next/script';
 import { WriteReviewChip } from "../../components/ActionChip";
 
 
@@ -85,15 +84,7 @@ export default function CoursePage({course}) {
               <title>{title} - cosb</title>
               <meta name="description" content={desc} />
               <link rel="icon" href="/favicon.ico" />
-            <Script
-                src='https://platform-api.sharethis.com/js/sharethis.js#property=63cd16ce25f4b2001938785b&product=sop'
-                async='async'
-                type='text/javascript'
-                strategy="lazyOnload"
-                onLoad={() =>
-                console.log(`script loaded correctly, window.FB has been populated`)
-                }
-            />
+
 
             </Head>
 
