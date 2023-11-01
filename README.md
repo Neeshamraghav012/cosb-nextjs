@@ -2,7 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First clone the repo using git clone 
+
+After that switch to cosb-nextjs directory using cd cosb-nextjs
+
+then, run the development server:
 
 ```bash
 npm run dev
