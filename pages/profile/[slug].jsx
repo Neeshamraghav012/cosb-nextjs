@@ -1,14 +1,8 @@
 import {useRouter} from "next/router";
-import Navbar from "../../components/Navbar";
-import Image from "next/image";
-import {EditProfileChip} from "../../components/ActionChip";
-import SettingsIcon from '@mui/icons-material/Settings';
-import {motion} from "framer-motion";
 import ProfileCard from "../../components/pageComponents/profilePageComponents/ProfileCard";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {AVATAR_URL, USER_PROFILE} from "../../config/constants";
-import {RequestHeaders} from "../../utility/Auth";
 import Footer from "../../components/Footer";
 
 
@@ -50,18 +44,16 @@ export default function ProfilePage({user, username}) {
 
     }, [user]);
 
+    console.log(data);
+
     return (
         <div className={'bg-gray'}>
             <ProfileCard
                 loading={loading}
                 data={data}
-                image={loading ? '' : AVATAR_URL + userName}
+                avatar={loading ? '' : AVATAR_URL + userName}
                 name={'Neesham'}
                 username={userName}
-                posts={'1'}
-                followers={'593'}
-                following={'463'}
-                bio={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris . Duis aute icaorum.'}
             />
 
             <Footer className={'mt-20'}/>

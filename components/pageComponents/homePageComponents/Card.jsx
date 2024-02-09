@@ -22,6 +22,8 @@ import {getToken} from "../../../utility/Auth";
 const Card = ({ title, description, image, rating, platform, price, id, isLogged }) => {
     const [status, setStatus] = useState('');
 
+    const url = "https://res.cloudinary.com/hire-easy/image/upload/v1659026436/media/images/WhatsApp_Image_2022-07-26_at_6.45.36_PM_xs9x6b.jpg";
+
 
     const handleChange = async (event) => {
         setStatus(event.target.value);
@@ -41,7 +43,7 @@ const Card = ({ title, description, image, rating, platform, price, id, isLogged
             <div className={'flex'}>
                 <div className="md:w-1/6 w-1/2 flex flex-col flex-wrap overflow-hidden">
 
-                    <Image className={'w-full rounded-xl'} src={image ? image : cosb} alt={title} height={'70'} width={'50'} />
+                    <Image className={'w-full rounded-xl'} src={image ? image : url} alt={title} height={'70'} width={'50'} />
                 </div>
                 <div className="ml-4 w-5/6">
                     <Link href={`/course/${id}`}><h3 className={'text-2xl font-bold hover:underline cursor-pointer'}>{title}</h3></Link>

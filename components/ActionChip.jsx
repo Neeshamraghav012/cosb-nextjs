@@ -59,8 +59,7 @@ export const WriteReviewChip = ({className}) => {
     const [sent, setSent] = useState("");
 
     const id = useContext(IdContext);
-    const token = localStorage.getItem('token');
-    console.log(token)
+    const token = getToken();
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -114,6 +113,7 @@ export const WriteReviewChip = ({className}) => {
                 headers: RequestHeaders
             })
             .then((res) => {
+                console.log(res);
                 setIsLoading(false);
                 handleClose();
                 setAlert(true);

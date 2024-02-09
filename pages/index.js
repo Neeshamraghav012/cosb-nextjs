@@ -100,37 +100,6 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          {/*<div role="alert" className="rounded-xl border border-gray-100 p-4 shadow-xl text-center">
-            <div className="flex gap-4">
-
-                <span
-                  className="inline-flex items-center justify-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700"
-                >
-
-
-                  <p className="whitespace-nowrap text-sm">New</p>
-                </span>
-
-
-              <div className="flex-1">
-
-
-                <div className="mt-4 flex gap-2 mx-auto">
-                  <Link
-                    href={'/diary'}
-                    className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-black"
-                  >
-                    <span className="text-sm"> Diary </span>
-
-                  </Link>
-
-
-                </div>
-              </div>
-
-            </div>
-          </div>*/}
-
 
           <Action onSearchChange={onSearchChange}/>
 
